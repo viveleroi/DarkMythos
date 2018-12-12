@@ -63,8 +63,8 @@ public class CommonProxy {
 
         // Crystals
         event.getRegistry().register(new ItemDarkCrystal());
-        event.getRegistry().register(new ItemLegendaryDarkCrystal());
-        event.getRegistry().register(new ItemMythicalDarkCrystal());
+//        event.getRegistry().register(new ItemLegendaryDarkCrystal());
+//        event.getRegistry().register(new ItemMythicalDarkCrystal());
         event.getRegistry().register(new ItemSuperiorDarkCrystal());
 
         // Scrolls
@@ -72,8 +72,8 @@ public class CommonProxy {
         event.getRegistry().register(new ItemScrollOfIronTouch());
 
         // Tools
+//        event.getRegistry().register(new ItemDarkCrystalAxe("legendarydarkcrystalaxe", Materials.LEGENDARY_DARK_CRYSTAL));
+//        event.getRegistry().register(new ItemDarkCrystalAxe("mythicaldarkcrystalaxe", Materials.MYTHICAL_DARK_CRYSTAL));
         event.getRegistry().register(new ItemDarkCrystalAxe("superiordarkcrystalaxe", Materials.SUPERIOR_DARK_CRYSTAL));
-        event.getRegistry().register(new ItemDarkCrystalAxe("legendarydarkcrystalaxe", Materials.LEGENDARY_DARK_CRYSTAL));
-        event.getRegistry().register(new ItemDarkCrystalAxe("mythicaldarkcrystalaxe", Materials.MYTHICAL_DARK_CRYSTAL));
     }
 }

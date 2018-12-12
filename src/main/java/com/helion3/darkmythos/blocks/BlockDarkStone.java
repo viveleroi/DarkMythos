@@ -47,6 +47,11 @@ public class BlockDarkStone extends Block {
     }
 
     @Override
+    public int quantityDropped(Random random) {
+        return random.nextInt(3) + 1;
+    }
+
+    @Override
     public Item getItemDropped(IBlockState state, Random random, int fortune)  {
         return ModItems.darkCrystal;
     }

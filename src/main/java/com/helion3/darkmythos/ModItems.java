@@ -80,13 +80,13 @@ public class ModItems {
     public static void initModels() {
         // Crystals
         darkCrystal.initModel();
-        legendayDarkCrystal.initModel();
-        mythicalDarkCrystal.initModel();
+//        legendayDarkCrystal.initModel();
+//        mythicalDarkCrystal.initModel();
         superiorDarkCrystal.initModel();
 
         // Axes
-        legendaryDarkCrystalAxe.initModel();
-        mythicalDarkCrystalAxe.initModel();
+//        legendaryDarkCrystalAxe.initModel();
+//        mythicalDarkCrystalAxe.initModel();
         superiorDarkCrystalAxe.initModel();
 
         // Scrolls
