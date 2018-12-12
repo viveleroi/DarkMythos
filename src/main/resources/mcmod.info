@@ -1,0 +1,16 @@
+[
+{
+  "modid": "darkmythos",
+  "name": "DarkMythos",
+  "description": "A mod of gods and magic",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["viveleroi"],
+  "credits": "viveleroi, every from dhmc",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
