@@ -33,7 +33,10 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class LootTableLoadListener {
     @SubscribeEvent
     public static void lootTableLoad(LootTableLoadEvent event) {
-        if (event.getName().getResourcePath().equals("entities/zombie")) {
+        if (event.getName().getResourcePath().equals("entities/skeleton")) {
+            LootUtil.addItemToTable(event.getTable(), ModItems.scrollOfBotanicMaturity, 1, 1, 0.1f, 1, 1, 0, 1, "scroll");
+        }
+        else if (event.getName().getResourcePath().equals("entities/zombie")) {
             LootUtil.addItemToTable(event.getTable(), ModItems.scrollOfIronTouch, 1, 1, 0.2f, 1, 1, 0, 1, "scroll");
         }
     }
