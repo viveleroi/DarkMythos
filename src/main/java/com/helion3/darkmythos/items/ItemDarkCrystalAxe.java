@@ -32,8 +32,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemDarkCrystalAxe extends ItemAxe {
-    public ItemDarkCrystalAxe(String name, ToolMaterial material) {
-        super(material, 9, -2.8f);
+    public ItemDarkCrystalAxe(String name, ToolMaterial material, float damage, float speed) {
+        super(material, damage, speed);
         this.setCreativeTab(ModItems.tabDarkMythos);
         this.setRegistryName(name);
         this.setUnlocalizedName(DarkMythos.MODID + "." + name);
