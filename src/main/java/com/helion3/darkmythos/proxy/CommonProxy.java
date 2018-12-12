@@ -72,7 +72,6 @@ public class CommonProxy {
         event.getRegistry().register(new ItemScrollOfIronTouch());
 
         // Tools
-        event.getRegistry().register(new ItemDarkCrystalAxe("darkcrystalaxe", Materials.DARK_CRYSTAL));
         event.getRegistry().register(new ItemDarkCrystalAxe("superiordarkcrystalaxe", Materials.SUPERIOR_DARK_CRYSTAL));
         event.getRegistry().register(new ItemDarkCrystalAxe("legendarydarkcrystalaxe", Materials.LEGENDARY_DARK_CRYSTAL));
         event.getRegistry().register(new ItemDarkCrystalAxe("mythicaldarkcrystalaxe", Materials.MYTHICAL_DARK_CRYSTAL));

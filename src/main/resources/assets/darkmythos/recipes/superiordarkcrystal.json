@@ -1,21 +1,19 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [{
-    "item": "darkmythos:darkcrystal",
-    "data": 0
-  }, {
-    "item": "minecraft:iron_ingot",
-    "data": 0
-  }, {
-    "item": "minecraft:gold_ingot",
-    "data": 0
-  }, {
-    "item": "minecraft:diamond",
-    "data": 0
-  }, {
-    "item": "minecraft:emerald",
-    "data": 0
-  }],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"  ],
+  "key": {
+    "A": [{
+      "item": "darkmythos:darkcrystal",
+      "data": 0
+    }],
+    "B": [{
+      "item": "minecraft:emerald",
+      "data": 0
+    }]
+  },
   "result": {
     "item": "darkmythos:superiordarkcrystal",
     "data": 0
