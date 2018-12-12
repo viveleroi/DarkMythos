@@ -24,8 +24,8 @@
 package com.helion3.darkmythos.items;
 
 import com.helion3.darkmythos.DarkMythos;
+import com.helion3.darkmythos.ModItems;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
@@ -33,7 +33,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemLegendaryDarkCrystal extends Item {
     public ItemLegendaryDarkCrystal() {
-        setCreativeTab(CreativeTabs.MISC);
+        this.setCreativeTab(ModItems.tabDarkMythos);
         this.setRegistryName("legendarydarkcrystal");
         this.setUnlocalizedName(DarkMythos.MODID + ".legendarydarkcrystal");
     }

@@ -24,11 +24,17 @@
 package com.helion3.darkmythos;
 
 import com.helion3.darkmythos.items.*;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModItems {
+    @GameRegistry.ObjectHolder("darkmythos:darkstone")
+    public static ItemBlock darkStone;
+
     @GameRegistry.ObjectHolder("darkmythos:darkcrystal")
     public static ItemDarkCrystal darkCrystal;
 
@@ -53,6 +59,21 @@ public class ModItems {
     @GameRegistry.ObjectHolder("darkmythos:superiordarkcrystalaxe")
     public static ItemDarkCrystalAxe superiorDarkCrystalAxe;
 
+    @GameRegistry.ObjectHolder("darkmythos:scrollofirontouch")
+    public static ItemScrollOfIronTouch scrollOfIronTouch;
+
+    public static final CreativeTabs tabDarkMythos = (new CreativeTabs("tabDarkMythos") {
+        @Override
+        public ItemStack getTabIconItem() {
+            return new ItemStack(darkStone);
+        }
+
+        @Override
+        public boolean hasSearchBar() {
+            return true;
+        }
+    });
+
     @SideOnly(Side.CLIENT)
     public static void initModels() {
         // Crystals
@@ -66,5 +87,8 @@ public class ModItems {
         legendaryDarkCrystalAxe.initModel();
         mythicalDarkCrystalAxe.initModel();
         superiorDarkCrystalAxe.initModel();
+
+        // Scrolls
+        scrollOfIronTouch.initModel();
     }
 }

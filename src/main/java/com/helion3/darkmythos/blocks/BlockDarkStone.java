@@ -29,7 +29,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
@@ -40,11 +39,11 @@ import java.util.Random;
 public class BlockDarkStone extends Block {
     public BlockDarkStone() {
         super(Material.ROCK);
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-        setHardness(2.2f);
-        setHarvestLevel("pickaxe", 3);
-        setUnlocalizedName(DarkMythos.MODID + ".darkstone");
-        setRegistryName("darkstone");
+        this.setCreativeTab(ModItems.tabDarkMythos);
+        this.setHardness(2.2f);
+        this.setHarvestLevel("pickaxe", 3);
+        this.setUnlocalizedName(DarkMythos.MODID + ".darkstone");
+        this.setRegistryName("darkstone");
     }
 
     @Override
