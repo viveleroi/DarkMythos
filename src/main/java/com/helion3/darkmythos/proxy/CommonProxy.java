@@ -26,8 +26,7 @@ package com.helion3.darkmythos.proxy;
 import com.helion3.darkmythos.*;
 import com.helion3.darkmythos.blocks.BlockDarkStone;
 import com.helion3.darkmythos.generation.BlockDarkStoneGen;
-import com.helion3.darkmythos.items.ItemDarkCrystal;
-import com.helion3.darkmythos.items.ItemDarkCrystalAxe;
+import com.helion3.darkmythos.items.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -57,8 +56,19 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-        event.getRegistry().register(new ItemDarkCrystal());
-        event.getRegistry().register(new ItemDarkCrystalAxe("darkcrystalaxe", Materials.DARKCRYSTAL));
+        // Blocks
         event.getRegistry().register(new ItemBlock(ModBlocks.darkStone).setRegistryName(ModBlocks.darkStone.getRegistryName()));
+
+        // Crystals
+        event.getRegistry().register(new ItemDarkCrystal());
+        event.getRegistry().register(new ItemLegendaryDarkCrystal());
+        event.getRegistry().register(new ItemMythicalDarkCrystal());
+        event.getRegistry().register(new ItemSuperiorDarkCrystal());
+
+        // Tools
+        event.getRegistry().register(new ItemDarkCrystalAxe("darkcrystalaxe", Materials.DARK_CRYSTAL));
+        event.getRegistry().register(new ItemDarkCrystalAxe("superiordarkcrystalaxe", Materials.SUPERIOR_DARK_CRYSTAL));
+        event.getRegistry().register(new ItemDarkCrystalAxe("legendarydarkcrystalaxe", Materials.LEGENDARY_DARK_CRYSTAL));
+        event.getRegistry().register(new ItemDarkCrystalAxe("mythicaldarkcrystalaxe", Materials.MYTHICAL_DARK_CRYSTAL));
     }
 }

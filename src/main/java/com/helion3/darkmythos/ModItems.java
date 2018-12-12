@@ -23,8 +23,7 @@
  ******************************************************************************/
 package com.helion3.darkmythos;
 
-import com.helion3.darkmythos.items.ItemDarkCrystal;
-import com.helion3.darkmythos.items.ItemDarkCrystalAxe;
+import com.helion3.darkmythos.items.*;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -33,12 +32,39 @@ public class ModItems {
     @GameRegistry.ObjectHolder("darkmythos:darkcrystal")
     public static ItemDarkCrystal darkCrystal;
 
+    @GameRegistry.ObjectHolder("darkmythos:legendarydarkcrystal")
+    public static ItemLegendaryDarkCrystal legendayDarkCrystal;
+
+    @GameRegistry.ObjectHolder("darkmythos:mythicaldarkcrystal")
+    public static ItemMythicalDarkCrystal mythicalDarkCrystal;
+
+    @GameRegistry.ObjectHolder("darkmythos:superiordarkcrystal")
+    public static ItemSuperiorDarkCrystal superiorDarkCrystal;
+
     @GameRegistry.ObjectHolder("darkmythos:darkcrystalaxe")
     public static ItemDarkCrystalAxe darkCrystalAxe;
 
+    @GameRegistry.ObjectHolder("darkmythos:legendarydarkcrystalaxe")
+    public static ItemDarkCrystalAxe legendaryDarkCrystalAxe;
+
+    @GameRegistry.ObjectHolder("darkmythos:mythicaldarkcrystalaxe")
+    public static ItemDarkCrystalAxe mythicalDarkCrystalAxe;
+
+    @GameRegistry.ObjectHolder("darkmythos:superiordarkcrystalaxe")
+    public static ItemDarkCrystalAxe superiorDarkCrystalAxe;
+
     @SideOnly(Side.CLIENT)
     public static void initModels() {
+        // Crystals
         darkCrystal.initModel();
+        legendayDarkCrystal.initModel();
+        mythicalDarkCrystal.initModel();
+        superiorDarkCrystal.initModel();
+
+        // Axes
         darkCrystalAxe.initModel();
+        legendaryDarkCrystalAxe.initModel();
+        mythicalDarkCrystalAxe.initModel();
+        superiorDarkCrystalAxe.initModel();
     }
 }
