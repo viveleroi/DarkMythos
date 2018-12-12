@@ -24,8 +24,8 @@
 package com.helion3.darkmythos.proxy;
 
 import com.helion3.darkmythos.*;
-import com.helion3.darkmythos.blocks.BlockDarkStone;
-import com.helion3.darkmythos.generation.BlockDarkStoneGen;
+import com.helion3.darkmythos.blocks.BlockDarkCrystalOre;
+import com.helion3.darkmythos.generation.BlockDarkCrystalOreGen;
 import com.helion3.darkmythos.items.*;
 import com.helion3.darkmythos.items.scrolls.ItemScrollOfBotanicMaturity;
 import com.helion3.darkmythos.items.scrolls.ItemScrollOfIronTouch;
@@ -44,7 +44,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class CommonProxy {
     public void preInit(FMLPreInitializationEvent e) {
         // Register generators
-        GameRegistry.registerWorldGenerator(new BlockDarkStoneGen(), 3);
+        GameRegistry.registerWorldGenerator(new BlockDarkCrystalOreGen(), 3);
     }
 
     public void init(FMLInitializationEvent e) {}
@@ -53,13 +53,13 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
-        event.getRegistry().register(new BlockDarkStone());
+        event.getRegistry().register(new BlockDarkCrystalOre());
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         // Blocks
-        event.getRegistry().register(new ItemBlock(ModBlocks.darkStone).setRegistryName(ModBlocks.darkStone.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.darkCrystalOre).setRegistryName(ModBlocks.darkCrystalOre.getRegistryName()));
 
         // Crystals
         event.getRegistry().register(new ItemDarkCrystal());

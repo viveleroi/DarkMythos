@@ -23,17 +23,17 @@
  ******************************************************************************/
 package com.helion3.darkmythos;
 
-import com.helion3.darkmythos.blocks.BlockDarkStone;
+import com.helion3.darkmythos.blocks.BlockDarkCrystalOre;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModBlocks {
-    @GameRegistry.ObjectHolder("darkmythos:darkstone")
-    public static BlockDarkStone darkStone;
+    @GameRegistry.ObjectHolder("darkmythos:darkcrystalore")
+    public static BlockDarkCrystalOre darkCrystalOre;
 
     @SideOnly(Side.CLIENT)
     public static void initModels() {
-        darkStone.initModel();
+        darkCrystalOre.initModel();
     }
 }

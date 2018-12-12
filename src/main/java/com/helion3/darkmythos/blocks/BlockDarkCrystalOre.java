@@ -30,20 +30,22 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
-public class BlockDarkStone extends Block {
-    public BlockDarkStone() {
+public class BlockDarkCrystalOre extends Block {
+    public BlockDarkCrystalOre() {
         super(Material.ROCK);
         this.setCreativeTab(ModItems.tabDarkMythos);
         this.setHardness(2.2f);
         this.setHarvestLevel("pickaxe", 3);
-        this.setUnlocalizedName(DarkMythos.MODID + ".darkstone");
-        this.setRegistryName("darkstone");
+        this.setUnlocalizedName(DarkMythos.MODID + ".darkcrystalore");
+        this.setRegistryName("darkcrystalore");
     }
 
     @Override
@@ -54,6 +56,11 @@ public class BlockDarkStone extends Block {
     @Override
     public Item getItemDropped(IBlockState state, Random random, int fortune)  {
         return ModItems.darkCrystal;
+    }
+
+    @Override
+    public int getExpDrop(IBlockState state, IBlockAccess world, BlockPos pos, int fortune) {
+        return 4;
     }
 
     @SideOnly(Side.CLIENT)

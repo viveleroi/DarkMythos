@@ -34,12 +34,12 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 
 import java.util.Random;
 
-public class BlockDarkStoneGen implements IWorldGenerator {
+public class BlockDarkCrystalOreGen implements IWorldGenerator {
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
         // Overworld
         if (world.provider.getDimension() == 0) {
-            generateOre(ModBlocks.darkStone.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 1, 16, random.nextInt(3), 6);
+            generateOre(ModBlocks.darkCrystalOre.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 1, 16, random.nextInt(3), 6);
         }
     }
 

@@ -34,11 +34,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModItems {
-    @GameRegistry.ObjectHolder("darkmythos:darkstone")
-    public static ItemBlock darkStone;
-
     @GameRegistry.ObjectHolder("darkmythos:darkcrystal")
     public static ItemDarkCrystal darkCrystal;
+
+    @GameRegistry.ObjectHolder("darkmythos:darkcrystalore")
+    public static ItemBlock darkCrystalOre;
 
     @GameRegistry.ObjectHolder("darkmythos:legendarydarkcrystal")
     public static ItemLegendaryDarkCrystal legendayDarkCrystal;
@@ -67,7 +67,7 @@ public class ModItems {
     public static final CreativeTabs tabDarkMythos = (new CreativeTabs("tabDarkMythos") {
         @Override
         public ItemStack getTabIconItem() {
-            return new ItemStack(darkStone);
+            return new ItemStack(darkCrystalOre);
         }
 
         @Override
