@@ -9,3 +9,4 @@ item.darkmythos.scrollofirontouch.name=Scroll of Iron Touch
 item.darkmythos.superiordarkcrystal.name=Superior Dark Crystal
 item.darkmythos.superiordarkcrystalaxe.name=Superior Dark Crystal Axe
 itemGroup.tabDarkMythos=DarkMythos
+text.scroll.backfire_poison=You tried to overuse the scroll. You've been poisoned for it.

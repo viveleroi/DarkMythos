@@ -24,6 +24,7 @@
 package com.helion3.darkmythos;
 
 import com.helion3.darkmythos.items.*;
+import com.helion3.darkmythos.items.scrolls.ItemScrollOfIronTouch;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;

@@ -21,10 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  ******************************************************************************/
-package com.helion3.darkmythos.items;
+package com.helion3.darkmythos.items.scrolls;
 
+import com.helion3.darkmythos.Curses;
 import com.helion3.darkmythos.DarkMythos;
 import com.helion3.darkmythos.ModItems;
+import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
@@ -35,6 +37,7 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
@@ -71,12 +74,39 @@ public class ItemScrollOfIronTouch extends Item {
 
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        if (worldIn.getBlockState(pos).getBlock() == Blocks.COAL_ORE) {
-            // Apply changes
+        // Run only on logical server
+        if (worldIn.isRemote) {
+            return EnumActionResult.PASS;
+        }
+
+        // Calculate the remaining durability
+        int durabilityLeft = player.getHeldItemMainhand().getMaxDamage() - player.getHeldItemMainhand().getItemDamage();
+        int newDamage = 0;
+
+        Block worldBlock = worldIn.getBlockState(pos).getBlock();
+        if (worldBlock == Blocks.COAL_ORE) {
+            // Transmute block
             worldIn.setBlockState(pos, Blocks.IRON_ORE.getDefaultState());
 
-            // Damage item
-            player.getHeldItemMainhand().damageItem(1, player);
+            newDamage = 1;
+        }
+        else if (worldBlock == Blocks.COAL_BLOCK) {
+            if (durabilityLeft >= 8) {
+                // Transmute block
+                worldIn.setBlockState(pos, Blocks.IRON_BLOCK.getDefaultState());
+            } else {
+                player.sendMessage(new TextComponentTranslation("text.scroll.backfire_poison"));
+
+                // Curse them
+                Curses.applyMinorPoisonCurse(player);
+            }
+
+            newDamage = 9;
+        }
+
+        // If used, apply damage and return success
+        if (newDamage > 0) {
+            player.getHeldItemMainhand().damageItem(newDamage, player);
 
             return EnumActionResult.SUCCESS;
         }
