@@ -26,18 +26,16 @@ package com.helion3.darkmythos.items;
 import com.helion3.darkmythos.DarkMythos;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemAxe;
+import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-
-public class ItemDarkStoneAxe extends ItemAxe {
-    public ItemDarkStoneAxe(String name, ToolMaterial material) {
-        super(material, 9, -2.8f);
-        this.setCreativeTab(CreativeTabs.TOOLS);
-        this.setRegistryName(name);
-        this.setUnlocalizedName(DarkMythos.MODID + "." + name);
+public class ItemDarkCrystal extends Item {
+    public ItemDarkCrystal() {
+        setCreativeTab(CreativeTabs.MISC);
+        this.setRegistryName("darkcrystal");
+        this.setUnlocalizedName(DarkMythos.MODID + ".darkcrystal");
     }
 
     @SideOnly(Side.CLIENT)

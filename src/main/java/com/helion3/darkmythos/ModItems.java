@@ -23,17 +23,22 @@
  ******************************************************************************/
 package com.helion3.darkmythos;
 
-import com.helion3.darkmythos.items.ItemDarkStoneAxe;
+import com.helion3.darkmythos.items.ItemDarkCrystal;
+import com.helion3.darkmythos.items.ItemDarkCrystalAxe;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModItems {
-    @GameRegistry.ObjectHolder("darkmythos:darkstoneaxe")
-    public static ItemDarkStoneAxe darkStoneAxe;
+    @GameRegistry.ObjectHolder("darkmythos:darkcrystal")
+    public static ItemDarkCrystal darkCrystal;
+
+    @GameRegistry.ObjectHolder("darkmythos:darkcrystalaxe")
+    public static ItemDarkCrystalAxe darkCrystalAxe;
 
     @SideOnly(Side.CLIENT)
     public static void initModels() {
-        darkStoneAxe.initModel();
+        darkCrystal.initModel();
+        darkCrystalAxe.initModel();
     }
 }

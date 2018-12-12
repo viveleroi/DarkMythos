@@ -21,39 +21,27 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  ******************************************************************************/
-package com.helion3.darkmythos.blocks;
+package com.helion3.darkmythos.items;
 
 import com.helion3.darkmythos.DarkMythos;
-import com.helion3.darkmythos.ModItems;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
+import net.minecraft.item.ItemAxe;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.util.Random;
 
-public class BlockDarkStone extends Block {
-    public BlockDarkStone() {
-        super(Material.ROCK);
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-        setHardness(2.2f);
-        setHarvestLevel("pickaxe", 3);
-        setUnlocalizedName(DarkMythos.MODID + ".darkstone");
-        setRegistryName("darkstone");
-    }
-
-    @Override
-    public Item getItemDropped(IBlockState state, Random random, int fortune)  {
-        return ModItems.darkCrystal;
+public class ItemDarkCrystalAxe extends ItemAxe {
+    public ItemDarkCrystalAxe(String name, ToolMaterial material) {
+        super(material, 9, -2.8f);
+        this.setCreativeTab(CreativeTabs.TOOLS);
+        this.setRegistryName(name);
+        this.setUnlocalizedName(DarkMythos.MODID + "." + name);
     }
 
     @SideOnly(Side.CLIENT)
     public void initModel() {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
     }
 }

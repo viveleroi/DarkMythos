@@ -6,7 +6,7 @@
     " B "  ],
   "key": {
     "A": [{
-        "item": "darkmythos:darkstone",
+        "item": "darkmythos:darkcrystal",
         "data": 0
     }],
     "B": [{
@@ -15,7 +15,7 @@
     }]
   },
   "result": {
-    "item": "darkmythos:darkstoneaxe",
+    "item": "darkmythos:darkcrystalaxe",
     "data": 0
   }
 }

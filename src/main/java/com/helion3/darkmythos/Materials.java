@@ -27,5 +27,6 @@ import net.minecraft.item.Item;
 import net.minecraftforge.common.util.EnumHelper;
 
 public class Materials {
-    public static final Item.ToolMaterial DARKSTONE = EnumHelper.addToolMaterial("DARKSTONE", 3, 2048, 13f, 4.0f, 30);
+    // name, harvest level, durability, mining speed, damage, enchantability
+    public static final Item.ToolMaterial DARKCRYSTAL = EnumHelper.addToolMaterial("DARKCRYSTAL", 3, 1024, 13f, 4.0f, 30);
 }

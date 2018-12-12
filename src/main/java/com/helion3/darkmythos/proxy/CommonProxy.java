@@ -26,7 +26,8 @@ package com.helion3.darkmythos.proxy;
 import com.helion3.darkmythos.*;
 import com.helion3.darkmythos.blocks.BlockDarkStone;
 import com.helion3.darkmythos.generation.BlockDarkStoneGen;
-import com.helion3.darkmythos.items.ItemDarkStoneAxe;
+import com.helion3.darkmythos.items.ItemDarkCrystal;
+import com.helion3.darkmythos.items.ItemDarkCrystalAxe;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -56,8 +57,8 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-        event.getRegistry().register(new ItemDarkStoneAxe("darkstoneaxe", Materials.DARKSTONE));
-
+        event.getRegistry().register(new ItemDarkCrystal());
+        event.getRegistry().register(new ItemDarkCrystalAxe("darkcrystalaxe", Materials.DARKCRYSTAL));
         event.getRegistry().register(new ItemBlock(ModBlocks.darkStone).setRegistryName(ModBlocks.darkStone.getRegistryName()));
     }
 }
