@@ -25,6 +25,7 @@ package com.helion3.darkmythos.proxy;
 
 import com.helion3.darkmythos.*;
 import com.helion3.darkmythos.blocks.BlockDarkStone;
+import com.helion3.darkmythos.generation.BlockDarkStoneGen;
 import com.helion3.darkmythos.items.ItemDarkStoneAxe;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -35,17 +36,18 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod.EventBusSubscriber
 public class CommonProxy {
     public void preInit(FMLPreInitializationEvent e) {
+        // Register generators
+        GameRegistry.registerWorldGenerator(new BlockDarkStoneGen(), 3);
     }
 
-    public void init(FMLInitializationEvent e) {
-    }
+    public void init(FMLInitializationEvent e) {}
 
-    public void postInit(FMLPostInitializationEvent e) {
-    }
+    public void postInit(FMLPostInitializationEvent e) {}
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -57,10 +59,5 @@ public class CommonProxy {
         event.getRegistry().register(new ItemDarkStoneAxe("darkstoneaxe", Materials.DARKSTONE));
 
         event.getRegistry().register(new ItemBlock(ModBlocks.darkStone).setRegistryName(ModBlocks.darkStone.getRegistryName()));
-
-//        IronTouchSpellBook ironTouchSpellBook = new IronTouchSpellBook();
-//        ironTouchSpellBook.setCreativeTab(CreativeTabs.MISC);
-//
-//        event.getRegistry().registerAll(ironTouchSpellBook);
     }
 }

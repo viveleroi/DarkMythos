@@ -47,7 +47,10 @@ public class DarkMythos {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        // Cache the logger
         logger = event.getModLog();
+
+        // Pass the event to our proxy
         proxy.preInit(event);
     }
 

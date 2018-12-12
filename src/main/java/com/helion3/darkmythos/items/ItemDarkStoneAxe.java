@@ -23,6 +23,7 @@
  ******************************************************************************/
 package com.helion3.darkmythos.items;
 
+import com.helion3.darkmythos.DarkMythos;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemAxe;
@@ -36,7 +37,7 @@ public class ItemDarkStoneAxe extends ItemAxe {
         super(material, 9, -2.8f);
         this.setCreativeTab(CreativeTabs.TOOLS);
         this.setRegistryName(name);
-        this.setUnlocalizedName(name);
+        this.setUnlocalizedName(DarkMythos.MODID + "." + name);
     }
 
     @SideOnly(Side.CLIENT)
