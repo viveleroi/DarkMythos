@@ -39,7 +39,7 @@ public class BlockDarkCrystalOreGen implements IWorldGenerator {
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
         // Overworld
         if (world.provider.getDimension() == 0) {
-            generateOre(ModBlocks.darkCrystalOre.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 1, 16, random.nextInt(3), 6);
+            generateOre(ModBlocks.darkCrystalOre.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 1, 20, random.nextInt(6) + 1, 6);
         }
     }
 
