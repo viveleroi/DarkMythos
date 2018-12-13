@@ -41,7 +41,7 @@ public class ModItems {
     public static ItemBlock darkCrystalOre;
 
     @GameRegistry.ObjectHolder("darkmythos:legendarydarkcrystal")
-    public static ItemLegendaryDarkCrystal legendayDarkCrystal;
+    public static ItemLegendaryDarkCrystal legendaryDarkCrystal;
 
     @GameRegistry.ObjectHolder("darkmythos:mythicaldarkcrystal")
     public static ItemMythicalDarkCrystal mythicalDarkCrystal;
@@ -55,17 +55,20 @@ public class ModItems {
     @GameRegistry.ObjectHolder("darkmythos:mythicaldarkcrystalaxe")
     public static ItemDarkCrystalAxe mythicalDarkCrystalAxe;
 
+    @GameRegistry.ObjectHolder("darkmythos:scrollofbotanicmaturity")
+    public static ItemScrollOfBotanicMaturity scrollOfBotanicMaturity;
+
+    @GameRegistry.ObjectHolder("darkmythos:scrollofirontouch")
+    public static ItemScrollOfIronTouch scrollOfIronTouch;
+
     @GameRegistry.ObjectHolder("darkmythos:superiordarkcrystalaxe")
     public static ItemDarkCrystalAxe superiorDarkCrystalAxe;
 
     @GameRegistry.ObjectHolder("darkmythos:superiordarkcrystalpickaxe")
     public static ItemDarkCrystalPickaxe superiorDarkCrystalPickaxe;
 
-    @GameRegistry.ObjectHolder("darkmythos:scrollofbotanicmaturity")
-    public static ItemScrollOfBotanicMaturity scrollOfBotanicMaturity;
-
-    @GameRegistry.ObjectHolder("darkmythos:scrollofirontouch")
-    public static ItemScrollOfIronTouch scrollOfIronTouch;
+    @GameRegistry.ObjectHolder("darkmythos:superiordarkcrystalsword")
+    public static ItemDarkCrystalSword superiorDarkCrystalSword;
 
     public static final CreativeTabs tabDarkMythos = (new CreativeTabs("tabDarkMythos") {
         @Override
@@ -83,7 +86,7 @@ public class ModItems {
     public static void initModels() {
         // Crystals
         darkCrystal.initModel();
-//        legendayDarkCrystal.initModel();
+//        legendaryDarkCrystal.initModel();
 //        mythicalDarkCrystal.initModel();
         superiorDarkCrystal.initModel();
 
@@ -91,10 +94,15 @@ public class ModItems {
 //        legendaryDarkCrystalAxe.initModel();
 //        mythicalDarkCrystalAxe.initModel();
         superiorDarkCrystalAxe.initModel();
+
+        // Pickaxes
         superiorDarkCrystalPickaxe.initModel();
 
         // Scrolls
         scrollOfBotanicMaturity.initModel();
         scrollOfIronTouch.initModel();
+
+        // Swords
+        superiorDarkCrystalSword.initModel();
     }
 }

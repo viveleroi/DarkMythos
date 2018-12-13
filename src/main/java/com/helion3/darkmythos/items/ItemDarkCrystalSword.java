@@ -21,15 +21,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  ******************************************************************************/
-package com.helion3.darkmythos;
+package com.helion3.darkmythos.items;
 
-import net.minecraft.item.Item;
-import net.minecraftforge.common.util.EnumHelper;
+import com.helion3.darkmythos.DarkMythos;
+import com.helion3.darkmythos.ModItems;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.ItemSword;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class Materials {
-    // name, harvest level, durability, mining speed, damage, enchantability
-    public static final Item.ToolMaterial DARK_CRYSTAL = EnumHelper.addToolMaterial("DARK_CRYSTAL", 3, 256, 13, 4, 20);
-    public static final Item.ToolMaterial SUPERIOR_DARK_CRYSTAL = EnumHelper.addToolMaterial("SUPERIOR_DARK_CRYSTAL", 3, 2048, 9, 10, 30);
-    public static final Item.ToolMaterial LEGENDARY_DARK_CRYSTAL = EnumHelper.addToolMaterial("LEGENDARY_DARK_CRYSTAL", 3, 4096, 14, 25, 40);
-    public static final Item.ToolMaterial MYTHICAL_DARK_CRYSTAL = EnumHelper.addToolMaterial("MYTHICAL_DARK_CRYSTAL", 3, 8192, 20, 40, 80);
+public class ItemDarkCrystalSword extends ItemSword {
+    public ItemDarkCrystalSword(String name, ToolMaterial material) {
+        super(material);
+        this.setCreativeTab(ModItems.tabDarkMythos);
+        this.setRegistryName(name);
+        this.setUnlocalizedName(DarkMythos.MODID + "." + name);
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void initModel() {
+        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
+    }
 }

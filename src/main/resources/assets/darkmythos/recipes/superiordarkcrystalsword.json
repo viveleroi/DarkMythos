@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "AAA",
-    " B ",
+    " A ",
+    " A ",
     " B "
   ],
   "key": {
@@ -16,7 +16,7 @@
     }]
   },
   "result": {
-    "item": "darkmythos:superiordarkcrystalpickaxe",
+    "item": "darkmythos:superiordarkcrystalsword",
     "data": 0
   }
 }

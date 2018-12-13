@@ -3,7 +3,8 @@
   "pattern": [
     "AA ",
     "AB ",
-    " B "  ],
+    " B "
+  ],
   "key": {
     "A": [{
         "item": "darkmythos:superiordarkcrystal",
