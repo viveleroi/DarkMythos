@@ -41,13 +41,13 @@ public class ModItems {
     public static ItemBlock darkCrystalOre;
 
     @GameRegistry.ObjectHolder("darkmythos:legendarydarkcrystal")
-    public static ItemLegendaryDarkCrystal legendaryDarkCrystal;
+    public static ItemDarkCrystal legendaryDarkCrystal;
 
     @GameRegistry.ObjectHolder("darkmythos:mythicaldarkcrystal")
-    public static ItemMythicalDarkCrystal mythicalDarkCrystal;
+    public static ItemDarkCrystal mythicalDarkCrystal;
 
     @GameRegistry.ObjectHolder("darkmythos:superiordarkcrystal")
-    public static ItemSuperiorDarkCrystal superiorDarkCrystal;
+    public static ItemDarkCrystal superiorDarkCrystal;
 
     @GameRegistry.ObjectHolder("darkmythos:legendarydarkcrystalaxe")
     public static ItemDarkCrystalAxe legendaryDarkCrystalAxe;
@@ -87,7 +87,7 @@ public class ModItems {
         // Crystals
         darkCrystal.initModel();
 //        legendaryDarkCrystal.initModel();
-//        mythicalDarkCrystal.initModel();
+        mythicalDarkCrystal.initModel();
         superiorDarkCrystal.initModel();
 
         // Axes

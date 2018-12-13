@@ -62,10 +62,10 @@ public class CommonProxy {
         event.getRegistry().register(new ItemBlock(ModBlocks.darkCrystalOre).setRegistryName(ModBlocks.darkCrystalOre.getRegistryName()));
 
         // Crystals
-        event.getRegistry().register(new ItemDarkCrystal());
+        event.getRegistry().register(new ItemDarkCrystal("darkcrystal"));
 //        event.getRegistry().register(new ItemLegendaryDarkCrystal());
-//        event.getRegistry().register(new ItemMythicalDarkCrystal());
-        event.getRegistry().register(new ItemSuperiorDarkCrystal());
+        event.getRegistry().register(new ItemDarkCrystal("mythicaldarkcrystal"));
+        event.getRegistry().register(new ItemDarkCrystal("superiordarkcrystal"));
 
         // Scrolls
         event.getRegistry().register(new ItemScrollOfBotanicMaturity());

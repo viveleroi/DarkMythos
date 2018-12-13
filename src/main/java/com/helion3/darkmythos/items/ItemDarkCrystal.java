@@ -32,10 +32,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemDarkCrystal extends Item {
-    public ItemDarkCrystal() {
+    public ItemDarkCrystal(String name) {
         this.setCreativeTab(ModItems.tabDarkMythos);
-        this.setRegistryName("darkcrystal");
-        this.setUnlocalizedName(DarkMythos.MODID + ".darkcrystal");
+        this.setRegistryName(name);
+        this.setUnlocalizedName(DarkMythos.MODID + "." + name);
     }
 
     @SideOnly(Side.CLIENT)
