@@ -58,6 +58,9 @@ public class ModItems {
     @GameRegistry.ObjectHolder("darkmythos:superiordarkcrystalaxe")
     public static ItemDarkCrystalAxe superiorDarkCrystalAxe;
 
+    @GameRegistry.ObjectHolder("darkmythos:superiordarkcrystalpickaxe")
+    public static ItemDarkCrystalPickaxe superiorDarkCrystalPickaxe;
+
     @GameRegistry.ObjectHolder("darkmythos:scrollofbotanicmaturity")
     public static ItemScrollOfBotanicMaturity scrollOfBotanicMaturity;
 
@@ -88,6 +91,7 @@ public class ModItems {
 //        legendaryDarkCrystalAxe.initModel();
 //        mythicalDarkCrystalAxe.initModel();
         superiorDarkCrystalAxe.initModel();
+        superiorDarkCrystalPickaxe.initModel();
 
         // Scrolls
         scrollOfBotanicMaturity.initModel();
