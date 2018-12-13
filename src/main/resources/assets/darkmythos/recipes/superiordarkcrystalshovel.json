@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     " A ",
-    " A ",
+    " B ",
     " B "
   ],
   "key": {
@@ -16,7 +16,7 @@
     }]
   },
   "result": {
-    "item": "darkmythos:superiordarkcrystalsword",
+    "item": "darkmythos:superiordarkcrystalshovel",
     "data": 0
   }
 }a
