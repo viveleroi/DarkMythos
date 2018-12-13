@@ -86,7 +86,7 @@ public class ModItems {
     public static void initModels() {
         // Crystals
         darkCrystal.initModel();
-//        legendaryDarkCrystal.initModel();
+        legendaryDarkCrystal.initModel();
         mythicalDarkCrystal.initModel();
         superiorDarkCrystal.initModel();
 

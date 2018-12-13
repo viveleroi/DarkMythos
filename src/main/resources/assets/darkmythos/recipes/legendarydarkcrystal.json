@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    "ABA",
+    " A "
+  ],
+  "key": {
+    "A": [{
+      "item": "darkmythos:superiordarkcrystal",
+      "data": 0
+    }],
+    "B": [{
+      "item": "minecraft:nether_star",
+      "data": 0
+    }]
+  },
+  "result": {
+    "item": "darkmythos:legendarydarkcrystal",
+    "data": 0
+  }
+}
