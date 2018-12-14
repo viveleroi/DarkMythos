@@ -50,6 +50,8 @@ public class ItemScrollOfBotanicMaturity extends Scroll {
         if (ItemDye.applyBonemeal(phantomBonemeal, worldIn, pos, player, hand)) {
             player.getHeldItem(hand).damageItem(1, player);
         } else {
+            player.getHeldItem(hand).damageItem(9, player);
+
             // Run only on logical server
             if (worldIn.isRemote) {
                 player.sendMessage(new TextComponentTranslation("text.scroll.incorrect_poison"));
