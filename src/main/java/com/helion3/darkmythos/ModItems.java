@@ -26,6 +26,7 @@ package com.helion3.darkmythos;
 import com.helion3.darkmythos.items.*;
 import com.helion3.darkmythos.items.scrolls.ItemScrollOfBotanicMaturity;
 import com.helion3.darkmythos.items.scrolls.ItemScrollOfIronTouch;
+import com.helion3.darkmythos.items.scrolls.ItemScrollOfTransmootation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -67,6 +68,9 @@ public class ModItems {
 
     @GameRegistry.ObjectHolder("darkmythos:scrollofirontouch")
     public static ItemScrollOfIronTouch scrollOfIronTouch;
+
+    @GameRegistry.ObjectHolder("darkmythos:scrolloftransmootation")
+    public static ItemScrollOfTransmootation scrollOfTransmootation;
 
     @GameRegistry.ObjectHolder("darkmythos:superiordarkcrystalaxe")
     public static ItemDarkCrystalAxe superiorDarkCrystalAxe;
@@ -114,6 +118,7 @@ public class ModItems {
         // Scrolls
         scrollOfBotanicMaturity.initModel();
         scrollOfIronTouch.initModel();
+        scrollOfTransmootation.initModel();
 
         // Shovels
         superiorDarkCrystalShovel.initModel();

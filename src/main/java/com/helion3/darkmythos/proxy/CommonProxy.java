@@ -31,6 +31,7 @@ import com.helion3.darkmythos.generation.BlockDarkStoneGen;
 import com.helion3.darkmythos.items.*;
 import com.helion3.darkmythos.items.scrolls.ItemScrollOfBotanicMaturity;
 import com.helion3.darkmythos.items.scrolls.ItemScrollOfIronTouch;
+import com.helion3.darkmythos.items.scrolls.ItemScrollOfTransmootation;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
@@ -89,6 +90,7 @@ public class CommonProxy {
         // Scrolls
         event.getRegistry().register(new ItemScrollOfBotanicMaturity());
         event.getRegistry().register(new ItemScrollOfIronTouch());
+        event.getRegistry().register(new ItemScrollOfTransmootation());
 
         // Tools
 //        event.getRegistry().register(new ItemDarkCrystalAxe("legendarydarkcrystalaxe", Materials.LEGENDARY_DARK_CRYSTAL));
