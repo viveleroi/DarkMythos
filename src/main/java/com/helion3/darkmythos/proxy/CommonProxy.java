@@ -79,6 +79,13 @@ public class CommonProxy {
         event.getRegistry().register(new ItemDarkCrystal("mythicaldarkcrystal"));
         event.getRegistry().register(new ItemDarkCrystal("superiordarkcrystal"));
 
+        // Misc
+        Item darkStoneRod = new DarkItem();
+        darkStoneRod.setCreativeTab(ModItems.tabDarkMythos);
+        darkStoneRod.setRegistryName("darkstonerod");
+        darkStoneRod.setUnlocalizedName(DarkMythos.MODID + ".darkstonerod");
+        event.getRegistry().register(darkStoneRod);
+
         // Scrolls
         event.getRegistry().register(new ItemScrollOfBotanicMaturity());
         event.getRegistry().register(new ItemScrollOfIronTouch());

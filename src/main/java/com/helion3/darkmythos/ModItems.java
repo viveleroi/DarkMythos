@@ -27,6 +27,7 @@ import com.helion3.darkmythos.items.*;
 import com.helion3.darkmythos.items.scrolls.ItemScrollOfBotanicMaturity;
 import com.helion3.darkmythos.items.scrolls.ItemScrollOfIronTouch;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -42,6 +43,9 @@ public class ModItems {
 
     @GameRegistry.ObjectHolder("darkmythos:darkstone")
     public static ItemBlock darkStone;
+
+    @GameRegistry.ObjectHolder("darkmythos:darkstonerod")
+    public static DarkItem darkStoneRod;
 
     @GameRegistry.ObjectHolder("darkmythos:legendarydarkcrystal")
     public static ItemDarkCrystal legendaryDarkCrystal;
@@ -100,6 +104,9 @@ public class ModItems {
 //        legendaryDarkCrystalAxe.initModel();
 //        mythicalDarkCrystalAxe.initModel();
         superiorDarkCrystalAxe.initModel();
+
+        // Misc
+        darkStoneRod.initModel();
 
         // Pickaxes
         superiorDarkCrystalPickaxe.initModel();
