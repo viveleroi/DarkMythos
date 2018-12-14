@@ -21,40 +21,36 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  ******************************************************************************/
-package com.helion3.darkmythos.blocks;
+package com.helion3.darkmythos.generation;
 
-import com.helion3.darkmythos.DarkMythos;
-import com.helion3.darkmythos.ModItems;
-import net.minecraft.block.material.Material;
+import com.helion3.darkmythos.ModBlocks;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
+import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.IChunkGenerator;
+import net.minecraft.world.gen.feature.WorldGenMinable;
+import net.minecraftforge.fml.common.IWorldGenerator;
 
 import java.util.Random;
 
-public class BlockDarkCrystalOre extends DarkBlock {
-    public BlockDarkCrystalOre() {
-        super(Material.ROCK);
-        this.setCreativeTab(ModItems.tabDarkMythos);
-        this.setHardness(3);
-        this.setHarvestLevel("pickaxe", 3);
-        this.setRegistryName("darkcrystalore");
-        this.setUnlocalizedName(DarkMythos.MODID + ".darkcrystalore");
+public class BlockDarkStoneGen implements IWorldGenerator {
+    @Override
+    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+        // Overworld
+        if (world.provider.getDimension() == 0) {
+            generateOre(ModBlocks.darkStone.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 30, 70, random.nextInt(24) + 1, 6);
+        }
     }
 
-    @Override
-    public int quantityDropped(Random random) {
-        return random.nextInt(3) + 1;
-    }
+    private void generateOre(IBlockState ore, World world, Random random, int x, int z, int minY, int maxY, int size, int chances) {
+        int deltaY = maxY - minY;
 
-    @Override
-    public Item getItemDropped(IBlockState state, Random random, int fortune)  {
-        return ModItems.darkCrystal;
-    }
+        for (int i = 0; i < chances; i++) {
+            BlockPos pos = new BlockPos(x + random.nextInt(16), minY + random.nextInt(deltaY), z + random.nextInt(16));
 
-    @Override
-    public int getExpDrop(IBlockState state, IBlockAccess world, BlockPos pos, int fortune) {
-        return 4;
+            WorldGenMinable generator = new WorldGenMinable(ore, size);
+            generator.generate(world, random, pos);
+        }
     }
 }

@@ -23,38 +23,21 @@
  ******************************************************************************/
 package com.helion3.darkmythos.blocks;
 
-import com.helion3.darkmythos.DarkMythos;
-import com.helion3.darkmythos.ModItems;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.util.Random;
-
-public class BlockDarkCrystalOre extends DarkBlock {
-    public BlockDarkCrystalOre() {
-        super(Material.ROCK);
-        this.setCreativeTab(ModItems.tabDarkMythos);
-        this.setHardness(3);
-        this.setHarvestLevel("pickaxe", 3);
-        this.setRegistryName("darkcrystalore");
-        this.setUnlocalizedName(DarkMythos.MODID + ".darkcrystalore");
+public class DarkBlock extends Block {
+    public DarkBlock(Material material) {
+        super(material);
     }
 
-    @Override
-    public int quantityDropped(Random random) {
-        return random.nextInt(3) + 1;
-    }
-
-    @Override
-    public Item getItemDropped(IBlockState state, Random random, int fortune)  {
-        return ModItems.darkCrystal;
-    }
-
-    @Override
-    public int getExpDrop(IBlockState state, IBlockAccess world, BlockPos pos, int fortune) {
-        return 4;
+    @SideOnly(Side.CLIENT)
+    public void initModel() {
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
     }
 }

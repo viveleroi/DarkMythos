@@ -40,6 +40,9 @@ public class ModItems {
     @GameRegistry.ObjectHolder("darkmythos:darkcrystalore")
     public static ItemBlock darkCrystalOre;
 
+    @GameRegistry.ObjectHolder("darkmythos:darkstone")
+    public static ItemBlock darkStone;
+
     @GameRegistry.ObjectHolder("darkmythos:legendarydarkcrystal")
     public static ItemDarkCrystal legendaryDarkCrystal;
 
