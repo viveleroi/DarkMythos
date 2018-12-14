@@ -24,8 +24,6 @@
 package com.helion3.darkmythos.items.scrolls;
 
 import com.helion3.darkmythos.Curses;
-import com.helion3.darkmythos.DarkMythos;
-import com.helion3.darkmythos.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -38,10 +36,9 @@ import net.minecraft.world.World;
 
 public class ItemScrollOfIronTouch extends Scroll {
     public ItemScrollOfIronTouch() {
-        this.setCreativeTab(ModItems.tabDarkMythos);
+        super("scrollofirontouch");
+
         this.setMaxDamage(8);
-        this.setRegistryName("scrollofirontouch");
-        this.setUnlocalizedName(DarkMythos.MODID + ".scrollofirontouch");
     }
 
     @Override

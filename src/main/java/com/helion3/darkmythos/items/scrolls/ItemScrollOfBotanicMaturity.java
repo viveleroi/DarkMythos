@@ -24,8 +24,6 @@
 package com.helion3.darkmythos.items.scrolls;
 
 import com.helion3.darkmythos.Curses;
-import com.helion3.darkmythos.DarkMythos;
-import com.helion3.darkmythos.ModItems;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemDye;
 import net.minecraft.item.ItemStack;
@@ -38,10 +36,9 @@ import net.minecraft.world.World;
 
 public class ItemScrollOfBotanicMaturity extends Scroll {
     public ItemScrollOfBotanicMaturity() {
-        this.setCreativeTab(ModItems.tabDarkMythos);
+        super("scrollofbotanicmaturity");
+
         this.setMaxDamage(8);
-        this.setRegistryName("scrollofbotanicmaturity");
-        this.setUnlocalizedName(DarkMythos.MODID + ".scrollofbotanicmaturity");
     }
 
     @Override

@@ -34,10 +34,10 @@ public class LootTableLoadListener {
     @SubscribeEvent
     public static void lootTableLoad(LootTableLoadEvent event) {
         if (event.getName().getResourcePath().equals("entities/skeleton")) {
-            LootUtil.addItemToTable(event.getTable(), ModItems.scrollOfBotanicMaturity, 1, 1, 0.1f, 1, 1, 0, 1, "scroll");
+            LootUtil.addItemToTable(event.getTable(), ModItems.scrollOfBotanicMaturity, 1, 1, 0.3f, "scroll");
         }
         else if (event.getName().getResourcePath().equals("entities/zombie")) {
-            LootUtil.addItemToTable(event.getTable(), ModItems.scrollOfIronTouch, 1, 1, 0.2f, 1, 1, 0, 1, "scroll");
+            LootUtil.addItemToTable(event.getTable(), ModItems.scrollOfIronTouch, 1, 1, 0.2f, "scroll");
         }
     }
 }

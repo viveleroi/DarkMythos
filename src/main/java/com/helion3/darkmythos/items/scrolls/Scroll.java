@@ -23,6 +23,8 @@
  ******************************************************************************/
 package com.helion3.darkmythos.items.scrolls;
 
+import com.helion3.darkmythos.DarkMythos;
+import com.helion3.darkmythos.ModItems;
 import com.helion3.darkmythos.items.DarkItem;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -36,6 +38,15 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public abstract class Scroll extends DarkItem {
+    public Scroll(String name) {
+        super();
+
+        this.setCreativeTab(ModItems.tabDarkMythos);
+        this.setMaxStackSize(1);
+        this.setRegistryName(name);
+        this.setUnlocalizedName(DarkMythos.MODID + "." + name);
+    }
+
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         tooltip.add(TextFormatting.AQUA + I18n.format("tooltip." + this.getRegistryName().toString().replace("darkmythos:", "") + ".description"));
@@ -46,7 +57,7 @@ public abstract class Scroll extends DarkItem {
     }
 
     @SideOnly(Side.CLIENT)
-    public boolean hasEffect(ItemStack par1ItemStack) {
+    public boolean hasEffect(ItemStack itemStack) {
         return true;
     }
 }
