@@ -43,24 +43,22 @@ public class ItemScrollOfBotanicMaturity extends Scroll {
 
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        // Run only on logical server
-        if (worldIn.isRemote) {
-            return EnumActionResult.PASS;
-        }
-
         // Copy the item so we give garbage to applyBonemeal - it does
         // things to the item damage we don't like
         ItemStack phantomBonemeal = player.getHeldItem(hand).copy();
 
-        if (ItemDye.applyBonemeal(phantomBonemeal, worldIn, pos)) {
+        if (ItemDye.applyBonemeal(phantomBonemeal, worldIn, pos, player, hand)) {
             player.getHeldItem(hand).damageItem(1, player);
         } else {
-            player.sendMessage(new TextComponentTranslation("text.scroll.incorrect_poison"));
+            // Run only on logical server
+            if (worldIn.isRemote) {
+                player.sendMessage(new TextComponentTranslation("text.scroll.incorrect_poison"));
 
-            // Curse them
-            Curses.applyMinorPoisonCurse(player);
+                // Curse them
+                Curses.applyMinorPoisonCurse(player);
+            }
         }
 
-        return EnumActionResult.FAIL;
+        return EnumActionResult.SUCCESS;
     }
 }
