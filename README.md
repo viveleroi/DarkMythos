@@ -20,7 +20,7 @@ Turns coal ore/blocks into iron. Drops from Zombies. If used incorrectly, applie
 
 **Scroll of Transmootation**
 
-Turns cows into mooshroom or vice-versa. Drops rarely from cows. If used incorrectly, applies minor poison curse. Max uses: 1.
+Turns cows into mooshroom or vice-versa. Drops rarely from cows or mooshrooms. If used incorrectly, applies minor poison curse. Max uses: 1.
 
 ## Blocks
 
