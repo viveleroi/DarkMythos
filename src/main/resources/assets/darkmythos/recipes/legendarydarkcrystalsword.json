@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    " A ",
+    " B "
+  ],
+  "key": {
+    "A": [{
+      "item": "darkmythos:legendarydarkcrystal",
+      "data": 0
+    }],
+    "B": [{
+      "item": "darkmythos:reinforceddarkstonerod",
+      "data": 0
+    }]
+  },
+  "result": {
+    "item": "darkmythos:legendarydarkcrystalsword",
+    "data": 0
+  }
+}a

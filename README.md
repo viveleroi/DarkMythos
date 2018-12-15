@@ -65,7 +65,13 @@ Crystals currently can be used for tools:
 
 ### Superior Dark Crystal Tools
 
-Use superior dark crystals and dark stone rods in the same patterns you're used to.
+Use superior dark crystals and dark stone rods in the same patterns vanilla uses.
+
+### Legendary Dark Crystal Tools
+
+Use legendary dark crystals and reinforced dark stone rods in the same patterns vanilla uses.
+
+(Only sword implemented.)
 
 ## Future
 

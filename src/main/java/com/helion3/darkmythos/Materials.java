@@ -30,6 +30,6 @@ public class Materials {
     // name, harvest level, durability, mining speed, damage, enchantability
     public static final Item.ToolMaterial DARK_CRYSTAL = EnumHelper.addToolMaterial("DARK_CRYSTAL", 3, 256, 13, 4, 20);
     public static final Item.ToolMaterial SUPERIOR_DARK_CRYSTAL = EnumHelper.addToolMaterial("SUPERIOR_DARK_CRYSTAL", 3, 2048, 9, 10, 30);
-    public static final Item.ToolMaterial LEGENDARY_DARK_CRYSTAL = EnumHelper.addToolMaterial("LEGENDARY_DARK_CRYSTAL", 3, 4096, 14, 25, 40);
+    public static final Item.ToolMaterial LEGENDARY_DARK_CRYSTAL = EnumHelper.addToolMaterial("LEGENDARY_DARK_CRYSTAL", 3, 4096, 14, 20, 40);
     public static final Item.ToolMaterial MYTHICAL_DARK_CRYSTAL = EnumHelper.addToolMaterial("MYTHICAL_DARK_CRYSTAL", 3, 8192, 20, 40, 80);
 }

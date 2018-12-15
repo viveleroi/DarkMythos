@@ -63,6 +63,9 @@ public class ModItems {
     @GameRegistry.ObjectHolder("darkmythos:legendarydarkcrystalaxe")
     public static ItemDarkCrystalAxe legendaryDarkCrystalAxe;
 
+    @GameRegistry.ObjectHolder("darkmythos:legendarydarkcrystalsword")
+    public static ItemDarkCrystalSword legendaryDarkCrystalSword;
+
     @GameRegistry.ObjectHolder("darkmythos:mythicaldarkcrystalaxe")
     public static ItemDarkCrystalAxe mythicalDarkCrystalAxe;
 
@@ -129,5 +132,6 @@ public class ModItems {
 
         // Swords
         superiorDarkCrystalSword.initModel();
+        legendaryDarkCrystalSword.initModel();
     }
 }

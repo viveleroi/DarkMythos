@@ -105,5 +105,7 @@ public class CommonProxy {
         event.getRegistry().register(new ItemDarkCrystalPickaxe("superiordarkcrystalpickaxe", Materials.SUPERIOR_DARK_CRYSTAL));
         event.getRegistry().register(new ItemDarkCrystalShovel("superiordarkcrystalshovel", Materials.SUPERIOR_DARK_CRYSTAL));
         event.getRegistry().register(new ItemDarkCrystalSword("superiordarkcrystalsword", Materials.SUPERIOR_DARK_CRYSTAL));
+
+        event.getRegistry().register(new ItemDarkCrystalSword("legendarydarkcrystalsword", Materials.LEGENDARY_DARK_CRYSTAL));
     }
 }
