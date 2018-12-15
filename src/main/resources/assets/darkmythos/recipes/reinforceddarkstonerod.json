@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [{
+    "item": "darkmythos:darkstonerod",
+    "data": 0
+  }, {
+    "item": "minecraft:diamond",
+    "data": 0
+  }, {
+    "item": "minecraft:obsidian",
+    "data": 0
+  }],
+  "result": {
+    "item": "darkmythos:reinforceddarkstonerod",
+    "data": 0
+  }
+}

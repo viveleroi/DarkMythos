@@ -48,6 +48,9 @@ public class ModItems {
     @GameRegistry.ObjectHolder("darkmythos:darkstonerod")
     public static DarkItem darkStoneRod;
 
+    @GameRegistry.ObjectHolder("darkmythos:reinforceddarkstonerod")
+    public static DarkItem reinforcedDarkStoneRod;
+
     @GameRegistry.ObjectHolder("darkmythos:legendarydarkcrystal")
     public static ItemDarkCrystal legendaryDarkCrystal;
 
@@ -111,6 +114,7 @@ public class ModItems {
 
         // Misc
         darkStoneRod.initModel();
+        reinforcedDarkStoneRod.initModel();
 
         // Pickaxes
         superiorDarkCrystalPickaxe.initModel();

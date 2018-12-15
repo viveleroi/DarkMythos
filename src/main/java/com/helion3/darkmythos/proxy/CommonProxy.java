@@ -87,6 +87,12 @@ public class CommonProxy {
         darkStoneRod.setUnlocalizedName(DarkMythos.MODID + ".darkstonerod");
         event.getRegistry().register(darkStoneRod);
 
+        Item reinforcedDarkStoneRod = new DarkItem();
+        reinforcedDarkStoneRod.setCreativeTab(ModItems.tabDarkMythos);
+        reinforcedDarkStoneRod.setRegistryName("reinforceddarkstonerod");
+        reinforcedDarkStoneRod.setUnlocalizedName(DarkMythos.MODID + ".reinforceddarkstonerod");
+        event.getRegistry().register(reinforcedDarkStoneRod);
+
         // Scrolls
         event.getRegistry().register(new ItemScrollOfBotanicMaturity());
         event.getRegistry().register(new ItemScrollOfIronTouch());

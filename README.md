@@ -46,9 +46,13 @@ Add 4 dark crystals around an emerald (top, right, bottom, left) to make a super
 
 Add 4 superior dark crystals around a nether star (top, right, bottom, left) to make a legendary dark crystal.
 
-### Dark Stone Rods
+### Dark Stone Rod
 
 Two dark stone blocks, one above the other. Similar to planks used for sticks. Makes 4.
+
+### Reinforced Dark Stone Rod
+
+Made with one dark stone rod, a diamond, and an obsidian block in any shape.
 
 ## Tools
 
