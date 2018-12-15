@@ -20,6 +20,7 @@ itemGroup.tabDarkMythos=DarkMythos
 text.scroll.backfire_poison=You tried to overuse the scroll. You've been poisoned for it
 text.scroll.incorrect_poison=You misused the scroll. You've been poisoned for it
 tooltip.cursed=May be cursed
+tooltip.pure=Pure
 tooltip.scrollofbotanicmaturity.description=Grows plants
 tooltip.scrollofirontouch.description=Turns coal ore/blocks into iron
 tooltip.scrolloftransmootation.description=Transmutes cows and mooshrooms

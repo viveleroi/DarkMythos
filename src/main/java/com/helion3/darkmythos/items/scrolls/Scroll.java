@@ -29,6 +29,7 @@ import com.helion3.darkmythos.items.DarkItem;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -51,13 +52,28 @@ public abstract class Scroll extends DarkItem {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         tooltip.add(TextFormatting.AQUA + I18n.format("tooltip." + this.getRegistryName().toString().replace("darkmythos:", "") + ".description"));
 
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.cursed"));
+        if (this.isPure(stack)) {
+            tooltip.add(TextFormatting.GREEN + I18n.format("tooltip.pure"));
+        } else {
+            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.cursed"));
+        }
 
         super.addInformation(stack, worldIn, tooltip, flagIn);
     }
 
     @SideOnly(Side.CLIENT)
     public boolean hasEffect(ItemStack itemStack) {
-        return true;
+        return this.isPure(itemStack);
+    }
+
+    public boolean isPure(ItemStack itemStack) {
+        NBTTagCompound nbt;
+        if (itemStack.hasTagCompound()) {
+            nbt = itemStack.getTagCompound();
+        } else {
+            nbt = new NBTTagCompound();
+        }
+
+        return nbt.hasKey("IsPure") && nbt.getBoolean("IsPure");
     }
 }
