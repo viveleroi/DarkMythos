@@ -44,15 +44,15 @@ public class BlockLightCrystalOre extends DarkBlock {
         this.setUnlocalizedName(DarkMythos.MODID + ".lightcrystalore");
     }
 
-//    @Override
-//    public int quantityDropped(Random random) {
-//        return random.nextInt(2) + 1;
-//    }
+    @Override
+    public int quantityDropped(Random random) {
+        return random.nextInt(2) + 1;
+    }
 
-//    @Override
-//    public Item getItemDropped(IBlockState state, Random random, int fortune)  {
-//        return ModItems.darkCrystal;
-//    }
+    @Override
+    public Item getItemDropped(IBlockState state, Random random, int fortune)  {
+        return ModItems.lightCrystal;
+    }
 
     @Override
     public int getExpDrop(IBlockState state, IBlockAccess world, BlockPos pos, int fortune) {

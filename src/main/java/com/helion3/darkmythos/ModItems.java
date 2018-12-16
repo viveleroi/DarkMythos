@@ -54,6 +54,9 @@ public class ModItems {
     @GameRegistry.ObjectHolder("darkmythos:legendarydarkcrystal")
     public static ItemDarkCrystal legendaryDarkCrystal;
 
+    @GameRegistry.ObjectHolder("darkmythos:lightcrystal")
+    public static DarkItem lightCrystal;
+
     @GameRegistry.ObjectHolder("darkmythos:mythicaldarkcrystal")
     public static ItemDarkCrystal mythicalDarkCrystal;
 
@@ -107,6 +110,7 @@ public class ModItems {
         // Crystals
         darkCrystal.initModel();
         legendaryDarkCrystal.initModel();
+        lightCrystal.initModel();
         mythicalDarkCrystal.initModel();
         superiorDarkCrystal.initModel();
 

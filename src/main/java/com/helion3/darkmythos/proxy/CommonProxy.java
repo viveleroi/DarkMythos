@@ -94,6 +94,7 @@ public class CommonProxy {
         // Crystals
         event.getRegistry().register(new ItemDarkCrystal("darkcrystal"));
         event.getRegistry().register(new ItemDarkCrystal("legendarydarkcrystal"));
+        event.getRegistry().register(new ItemDarkCrystal("lightcrystal"));
         event.getRegistry().register(new ItemDarkCrystal("mythicaldarkcrystal"));
         event.getRegistry().register(new ItemDarkCrystal("superiordarkcrystal"));
 
