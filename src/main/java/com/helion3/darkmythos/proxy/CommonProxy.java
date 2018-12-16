@@ -28,6 +28,7 @@ import com.helion3.darkmythos.blocks.BlockDarkCrystalOre;
 import com.helion3.darkmythos.blocks.DarkBlock;
 import com.helion3.darkmythos.generation.BlockDarkCrystalOreGen;
 import com.helion3.darkmythos.generation.BlockDarkStoneGen;
+import com.helion3.darkmythos.generation.BlockLightStoneGen;
 import com.helion3.darkmythos.items.*;
 import com.helion3.darkmythos.items.scrolls.ItemScrollOfBotanicMaturity;
 import com.helion3.darkmythos.items.scrolls.ItemScrollOfIronTouch;
@@ -50,6 +51,7 @@ public class CommonProxy {
         // Register generators
         GameRegistry.registerWorldGenerator(new BlockDarkCrystalOreGen(), 3);
         GameRegistry.registerWorldGenerator(new BlockDarkStoneGen(), 3);
+        GameRegistry.registerWorldGenerator(new BlockLightStoneGen(), 3);
     }
 
     public void init(FMLInitializationEvent e) {}
@@ -66,6 +68,15 @@ public class CommonProxy {
         darkStone.setRegistryName("darkstone");
         darkStone.setUnlocalizedName(DarkMythos.MODID + ".darkstone");
         event.getRegistry().register(darkStone);
+
+        Block lightStone = new DarkBlock(Material.ROCK);
+        lightStone.setCreativeTab(ModItems.tabDarkMythos);
+        lightStone.setHardness(1);
+        lightStone.setLightLevel(0.2f);
+        lightStone.setRegistryName("lightstone");
+        lightStone.setResistance(200);
+        lightStone.setUnlocalizedName(DarkMythos.MODID + ".lightstone");
+        event.getRegistry().register(lightStone);
     }
 
     @SubscribeEvent
@@ -73,6 +84,7 @@ public class CommonProxy {
         // Blocks
         event.getRegistry().register(new ItemBlock(ModBlocks.darkCrystalOre).setRegistryName(ModBlocks.darkCrystalOre.getRegistryName()));
         event.getRegistry().register(new ItemBlock(ModBlocks.darkStone).setRegistryName(ModBlocks.darkStone.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.lightStone).setRegistryName(ModBlocks.lightStone.getRegistryName()));
 
         // Crystals
         event.getRegistry().register(new ItemDarkCrystal("darkcrystal"));
@@ -105,7 +117,6 @@ public class CommonProxy {
         event.getRegistry().register(new ItemDarkCrystalPickaxe("superiordarkcrystalpickaxe", Materials.SUPERIOR_DARK_CRYSTAL));
         event.getRegistry().register(new ItemDarkCrystalShovel("superiordarkcrystalshovel", Materials.SUPERIOR_DARK_CRYSTAL));
         event.getRegistry().register(new ItemDarkCrystalSword("superiordarkcrystalsword", Materials.SUPERIOR_DARK_CRYSTAL));
-
         event.getRegistry().register(new ItemDarkCrystalSword("legendarydarkcrystalsword", Materials.LEGENDARY_DARK_CRYSTAL));
     }
 }

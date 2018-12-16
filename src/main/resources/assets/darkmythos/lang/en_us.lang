@@ -1,6 +1,4 @@
 item.darkmythos.darkcrystal.name=Dark Crystal
-tile.darkmythos.darkcrystalore.name=Dark Crystal Ore
-tile.darkmythos.darkstone.name=Dark Stone
 item.darkmythos.darkstonerod.name=Dark Stone Rod
 item.darkmythos.legendarydarkcrystal.name=Legendary Dark Crystal
 item.darkmythos.legendarydarkcrystalaxe.name=Legendary Dark Crystal Axe
@@ -19,6 +17,9 @@ item.darkmythos.superiordarkcrystalsword.name=Superior Dark Crystal Sword
 itemGroup.tabDarkMythos=DarkMythos
 text.scroll.backfire_poison=You tried to overuse the scroll. You've been poisoned for it
 text.scroll.incorrect_poison=You misused the scroll. You've been poisoned for it
+tile.darkmythos.darkcrystalore.name=Dark Crystal Ore
+tile.darkmythos.darkstone.name=Dark Stone
+tile.darkmythos.lightstone.name=Light Stone
 tooltip.cursed=May be cursed
 tooltip.pure=Pure
 tooltip.scrollofbotanicmaturity.description=Grows plants

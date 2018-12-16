@@ -36,9 +36,13 @@ public class ModBlocks {
     @GameRegistry.ObjectHolder("darkmythos:darkstone")
     public static DarkBlock darkStone;
 
+    @GameRegistry.ObjectHolder("darkmythos:lightstone")
+    public static DarkBlock lightStone;
+
     @SideOnly(Side.CLIENT)
     public static void initModels() {
         darkCrystalOre.initModel();
         darkStone.initModel();
+        lightStone.initModel();
     }
 }
