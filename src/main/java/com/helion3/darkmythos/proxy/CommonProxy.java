@@ -25,9 +25,11 @@ package com.helion3.darkmythos.proxy;
 
 import com.helion3.darkmythos.*;
 import com.helion3.darkmythos.blocks.BlockDarkCrystalOre;
+import com.helion3.darkmythos.blocks.BlockLightCrystalOre;
 import com.helion3.darkmythos.blocks.DarkBlock;
 import com.helion3.darkmythos.generation.BlockDarkCrystalOreGen;
 import com.helion3.darkmythos.generation.BlockDarkStoneGen;
+import com.helion3.darkmythos.generation.BlockLightCrystalOreGen;
 import com.helion3.darkmythos.generation.BlockLightStoneGen;
 import com.helion3.darkmythos.items.*;
 import com.helion3.darkmythos.items.scrolls.ItemScrollOfBotanicMaturity;
@@ -51,6 +53,7 @@ public class CommonProxy {
         // Register generators
         GameRegistry.registerWorldGenerator(new BlockDarkCrystalOreGen(), 3);
         GameRegistry.registerWorldGenerator(new BlockDarkStoneGen(), 3);
+        GameRegistry.registerWorldGenerator(new BlockLightCrystalOreGen(), 3);
         GameRegistry.registerWorldGenerator(new BlockLightStoneGen(), 3);
     }
 
@@ -61,6 +64,7 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         event.getRegistry().register(new BlockDarkCrystalOre());
+        event.getRegistry().register(new BlockLightCrystalOre());
 
         Block darkStone = new DarkBlock(Material.ROCK);
         darkStone.setCreativeTab(ModItems.tabDarkMythos);
@@ -84,6 +88,7 @@ public class CommonProxy {
         // Blocks
         event.getRegistry().register(new ItemBlock(ModBlocks.darkCrystalOre).setRegistryName(ModBlocks.darkCrystalOre.getRegistryName()));
         event.getRegistry().register(new ItemBlock(ModBlocks.darkStone).setRegistryName(ModBlocks.darkStone.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.lightCrystalOre).setRegistryName(ModBlocks.lightCrystalOre.getRegistryName()));
         event.getRegistry().register(new ItemBlock(ModBlocks.lightStone).setRegistryName(ModBlocks.lightStone.getRegistryName()));
 
         // Crystals

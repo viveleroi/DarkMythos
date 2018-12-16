@@ -19,6 +19,7 @@ text.scroll.backfire_poison=You tried to overuse the scroll. You've been poisone
 text.scroll.incorrect_poison=You misused the scroll. You've been poisoned for it
 tile.darkmythos.darkcrystalore.name=Dark Crystal Ore
 tile.darkmythos.darkstone.name=Dark Stone
+tile.darkmythos.lightcrystalore.name=Light Crystal Ore
 tile.darkmythos.lightstone.name=Light Stone
 tooltip.cursed=May be cursed
 tooltip.pure=Pure

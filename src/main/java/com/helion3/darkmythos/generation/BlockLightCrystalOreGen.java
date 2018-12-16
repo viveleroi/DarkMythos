@@ -34,12 +34,12 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 
 import java.util.Random;
 
-public class BlockLightStoneGen implements IWorldGenerator {
+public class BlockLightCrystalOreGen implements IWorldGenerator {
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
         // Overworld
         if (world.provider.getDimension() == 0) {
-            generateOre(ModBlocks.lightStone.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 100, 255, random.nextInt(10) + 1, 12);
+            generateOre(ModBlocks.lightCrystalOre.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 100, 255, random.nextInt(3) + 1, 6);
         }
     }
 

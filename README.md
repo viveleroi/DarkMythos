@@ -32,6 +32,10 @@ Dark Crystal Ore appears in the overworld below level 20 and drops dark crystals
 
 Dark Stone appears in the overworld between levels 30 and 70.
 
+### Light Crystal Ore
+
+Light Crystal Ore appears in the overworld above level 100 and drops light crystals when mined with a diamond pickaxe. It emits a very small amount of light.
+
 ### Light Stone
 
 Light Stone appears in the overworld between levels 100 and above. It emits a very small amount of light.
