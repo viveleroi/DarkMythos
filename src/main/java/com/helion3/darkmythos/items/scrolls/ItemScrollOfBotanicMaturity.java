@@ -38,27 +38,43 @@ public class ItemScrollOfBotanicMaturity extends Scroll {
     public ItemScrollOfBotanicMaturity() {
         super("scrollofbotanicmaturity");
 
+        this.curseChance = 0.2;
         this.setMaxDamage(8);
     }
 
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+        ItemStack itemStack = player.getHeldItem(hand);
+
+        if (this.tryForCurse(itemStack)) {
+            // Inform them
+            player.sendMessage(new TextComponentTranslation("text.scroll.cursed"));
+
+            // Destroy item
+            itemStack.damageItem(100, player);
+
+            // Curse them
+            Curses.applyMinorPoisonCurse(player);
+
+            return EnumActionResult.FAIL;
+        }
+
         // Copy the item so we give garbage to applyBonemeal - it does
         // things to the item damage we don't like
-        ItemStack phantomBonemeal = player.getHeldItem(hand).copy();
+        ItemStack phantomBonemeal = itemStack.copy();
 
         if (ItemDye.applyBonemeal(phantomBonemeal, worldIn, pos, player, hand)) {
-            player.getHeldItem(hand).damageItem(1, player);
+            itemStack.damageItem(1, player);
         } else {
-            player.getHeldItem(hand).damageItem(9, player);
+            itemStack.damageItem(9, player);
 
             // Run only on logical server
-            if (worldIn.isRemote) {
+            if (!worldIn.isRemote) {
                 player.sendMessage(new TextComponentTranslation("text.scroll.incorrect_poison"));
-
-                // Curse them
-                Curses.applyMinorPoisonCurse(player);
             }
+
+            // Curse them
+            Curses.applyMinorPoisonCurse(player);
         }
 
         return EnumActionResult.SUCCESS;

@@ -36,6 +36,7 @@ public class ItemScrollOfTransmootation extends Scroll {
     public ItemScrollOfTransmootation() {
         super("scrolloftransmootation");
 
+        this.curseChance = 0.5;
         this.setMaxDamage(1);
     }
 
@@ -44,6 +45,21 @@ public class ItemScrollOfTransmootation extends Scroll {
         // Run only on logical server
         if (target.world.isRemote) {
             return true;
+        }
+
+        ItemStack itemStack = playerIn.getHeldItem(hand);
+
+        if (this.tryForCurse(itemStack)) {
+            // Inform them
+            playerIn.sendMessage(new TextComponentTranslation("text.scroll.cursed"));
+
+            // Destroy item
+            itemStack.damageItem(100, playerIn);
+
+            // Curse them
+            Curses.applyMinorHungerCurse(playerIn);
+
+            return false;
         }
 
         if (target instanceof EntityMooshroom) {
@@ -68,10 +84,10 @@ public class ItemScrollOfTransmootation extends Scroll {
             playerIn.sendMessage(new TextComponentTranslation("text.scroll.incorrect_poison"));
 
             // Curse them
-            Curses.applyMinorPoisonCurse(playerIn);
+            Curses.applyMinorHungerCurse(playerIn);
         }
 
-        playerIn.getHeldItem(hand).damageItem(2, playerIn);
+        itemStack.damageItem(2, playerIn);
 
         return super.itemInteractionForEntity(stack, playerIn, target, hand);
     }

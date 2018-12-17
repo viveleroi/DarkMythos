@@ -37,11 +37,17 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Random;
 
 public abstract class Scroll extends DarkItem {
+    protected double curseChance = 0.1;
+
+    protected Random rng;
+
     public Scroll(String name) {
         super();
 
+        this.rng = new Random();
         this.setCreativeTab(ModItems.tabDarkMythos);
         this.setMaxStackSize(1);
         this.setRegistryName(name);
@@ -59,6 +65,10 @@ public abstract class Scroll extends DarkItem {
         }
 
         super.addInformation(stack, worldIn, tooltip, flagIn);
+    }
+
+    public boolean tryForCurse(ItemStack itemStack) {
+        return !this.isPure(itemStack) && rng.nextDouble() < this.curseChance;
     }
 
     @SideOnly(Side.CLIENT)

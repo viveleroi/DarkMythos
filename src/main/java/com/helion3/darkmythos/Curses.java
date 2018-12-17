@@ -31,4 +31,8 @@ public class Curses {
     public static void applyMinorPoisonCurse(EntityPlayer player) {
         player.addPotionEffect(new PotionEffect(MobEffects.POISON, 100, 0));
     }
+
+    public static void applyMinorHungerCurse(EntityPlayer player) {
+        player.addPotionEffect(new PotionEffect(MobEffects.HUNGER, 200, 0));
+    }
 }

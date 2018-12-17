@@ -27,6 +27,7 @@ import com.helion3.darkmythos.Curses;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -38,6 +39,7 @@ public class ItemScrollOfIronTouch extends Scroll {
     public ItemScrollOfIronTouch() {
         super("scrollofirontouch");
 
+        this.curseChance = 0.3;
         this.setMaxDamage(8);
     }
 
@@ -48,8 +50,23 @@ public class ItemScrollOfIronTouch extends Scroll {
             return EnumActionResult.PASS;
         }
 
+        ItemStack itemStack = player.getHeldItem(hand);
+
+        if (this.tryForCurse(itemStack)) {
+            // Inform them
+            player.sendMessage(new TextComponentTranslation("text.scroll.cursed"));
+
+            // Destroy item
+            itemStack.damageItem(100, player);
+
+            // Curse them
+            Curses.applyMinorPoisonCurse(player);
+
+            return EnumActionResult.FAIL;
+        }
+
         // Calculate the remaining durability
-        int durabilityLeft = player.getHeldItem(hand).getMaxDamage() - player.getHeldItem(hand).getItemDamage();
+        int durabilityLeft = itemStack.getMaxDamage() - itemStack.getItemDamage();
         int newDamage = 0;
 
         Block worldBlock = worldIn.getBlockState(pos).getBlock();
@@ -75,7 +92,7 @@ public class ItemScrollOfIronTouch extends Scroll {
 
         // If used, apply damage and return success
         if (newDamage > 0) {
-            player.getHeldItem(hand).damageItem(newDamage, player);
+            itemStack.damageItem(newDamage, player);
 
             return EnumActionResult.SUCCESS;
         }
