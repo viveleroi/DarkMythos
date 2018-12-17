@@ -23,34 +23,20 @@
  ******************************************************************************/
 package com.helion3.darkmythos;
 
-import com.helion3.darkmythos.blocks.*;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import com.helion3.darkmythos.fluids.ModFluid;
+import net.minecraft.block.material.Material;
+import net.minecraft.util.ResourceLocation;
 
-public class ModBlocks {
-    @GameRegistry.ObjectHolder("darkmythos:darkcrystalore")
-    public static BlockDarkCrystalOre darkCrystalOre;
-
-    @GameRegistry.ObjectHolder("darkmythos:darkstone")
-    public static ModBlock darkStone;
-
-    @GameRegistry.ObjectHolder("darkmythos:divinewater")
-    public static BlockDivineWater divineWater;
-
-    @GameRegistry.ObjectHolder("darkmythos:lightcrystalore")
-    public static BlockLightCrystalOre lightCrystalOre;
-
-    @GameRegistry.ObjectHolder("darkmythos:lightstone")
-    public static ModTranslucentBlock lightStone;
-
-    @SideOnly(Side.CLIENT)
-    public static void initModels() {
-        darkCrystalOre.initModel();
-        darkStone.initModel();
-        lightCrystalOre.initModel();
-        lightStone.initModel();
-
-        divineWater.render();
-    }
+public class ModFluids {
+    public static final ModFluid DIVINE_WATER = (ModFluid) new ModFluid(
+        "divinewater",
+        new ResourceLocation(DarkMythos.MODID,"blocks/divinewaterstill"),
+        new ResourceLocation(DarkMythos.MODID, "blocks/divinewaterflow")
+    )
+    .setMaterial(Material.WATER)
+    .setDensity(1100)
+    .setGaseous(false)
+    .setLuminosity(15)
+    .setViscosity(25000)
+    .setTemperature(300);
 }

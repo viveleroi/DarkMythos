@@ -24,10 +24,7 @@
 package com.helion3.darkmythos.proxy;
 
 import com.helion3.darkmythos.*;
-import com.helion3.darkmythos.blocks.BlockDarkCrystalOre;
-import com.helion3.darkmythos.blocks.BlockLightCrystalOre;
-import com.helion3.darkmythos.blocks.ModBlock;
-import com.helion3.darkmythos.blocks.ModTranslucentBlock;
+import com.helion3.darkmythos.blocks.*;
 import com.helion3.darkmythos.generation.BlockDarkCrystalOreGen;
 import com.helion3.darkmythos.generation.BlockDarkStoneGen;
 import com.helion3.darkmythos.generation.BlockLightCrystalOreGen;
@@ -41,6 +38,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -56,6 +54,10 @@ public class CommonProxy {
         GameRegistry.registerWorldGenerator(new BlockDarkStoneGen(), 3);
         GameRegistry.registerWorldGenerator(new BlockLightCrystalOreGen(), 3);
         GameRegistry.registerWorldGenerator(new BlockLightStoneGen(), 3);
+
+        // Register fluids
+        FluidRegistry.registerFluid(ModFluids.DIVINE_WATER);
+        FluidRegistry.addBucketForFluid(ModFluids.DIVINE_WATER);
     }
 
     public void init(FMLInitializationEvent e) {}
@@ -65,6 +67,7 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         event.getRegistry().register(new BlockDarkCrystalOre());
+        event.getRegistry().register(new BlockDivineWater());
         event.getRegistry().register(new BlockLightCrystalOre());
 
         Block darkStone = new ModBlock(Material.ROCK);

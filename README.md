@@ -81,6 +81,12 @@ Use legendary dark crystals and reinforced dark stone rods in the same patterns 
 
 (Only sword implemented.)
 
+## Liquids
+
+### Divine Water
+
+Not yet obtainable. Can be placed in-world with a bucket.
+
 ## Future
 
 This mod is currently in development, with plans to add/finish:

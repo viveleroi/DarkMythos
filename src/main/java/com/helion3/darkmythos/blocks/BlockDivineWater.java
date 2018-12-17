@@ -21,36 +21,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  ******************************************************************************/
-package com.helion3.darkmythos;
+package com.helion3.darkmythos.blocks;
 
-import com.helion3.darkmythos.blocks.*;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import com.helion3.darkmythos.DarkMythos;
+import com.helion3.darkmythos.ModFluids;
+import com.helion3.darkmythos.ModItems;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.block.statemap.StateMap;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ModBlocks {
-    @GameRegistry.ObjectHolder("darkmythos:darkcrystalore")
-    public static BlockDarkCrystalOre darkCrystalOre;
-
-    @GameRegistry.ObjectHolder("darkmythos:darkstone")
-    public static ModBlock darkStone;
-
-    @GameRegistry.ObjectHolder("darkmythos:divinewater")
-    public static BlockDivineWater divineWater;
-
-    @GameRegistry.ObjectHolder("darkmythos:lightcrystalore")
-    public static BlockLightCrystalOre lightCrystalOre;
-
-    @GameRegistry.ObjectHolder("darkmythos:lightstone")
-    public static ModTranslucentBlock lightStone;
+public class BlockDivineWater extends BlockFluidClassic {
+    public BlockDivineWater() {
+        super(ModFluids.DIVINE_WATER, Material.WATER);
+        this.setCreativeTab(ModItems.tabDarkMythos);
+        this.setRegistryName("divinewater");
+        this.setUnlocalizedName(DarkMythos.MODID + ".divinewater");
+    }
 
     @SideOnly(Side.CLIENT)
-    public static void initModels() {
-        darkCrystalOre.initModel();
-        darkStone.initModel();
-        lightCrystalOre.initModel();
-        lightStone.initModel();
-
-        divineWater.render();
+    public void render() {
+        ModelLoader.setCustomStateMapper(this, new StateMap.Builder().ignore(LEVEL).build());
     }
 }

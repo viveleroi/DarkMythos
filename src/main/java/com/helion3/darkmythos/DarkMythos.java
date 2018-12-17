@@ -24,6 +24,7 @@
 package com.helion3.darkmythos;
 
 import com.helion3.darkmythos.proxy.CommonProxy;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -44,6 +45,10 @@ public class DarkMythos {
     public static DarkMythos instance;
 
     public static Logger logger;
+
+    static {
+        FluidRegistry.enableUniversalBucket();
+    }
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
