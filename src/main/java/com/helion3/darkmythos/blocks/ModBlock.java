@@ -21,34 +21,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  ******************************************************************************/
-package com.helion3.darkmythos;
+package com.helion3.darkmythos.blocks;
 
-import com.helion3.darkmythos.blocks.BlockDarkCrystalOre;
-import com.helion3.darkmythos.blocks.BlockLightCrystalOre;
-import com.helion3.darkmythos.blocks.ModBlock;
-import com.helion3.darkmythos.blocks.ModTranslucentBlock;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ModBlocks {
-    @GameRegistry.ObjectHolder("darkmythos:darkcrystalore")
-    public static BlockDarkCrystalOre darkCrystalOre;
-
-    @GameRegistry.ObjectHolder("darkmythos:darkstone")
-    public static ModBlock darkStone;
-
-    @GameRegistry.ObjectHolder("darkmythos:lightcrystalore")
-    public static BlockLightCrystalOre lightCrystalOre;
-
-    @GameRegistry.ObjectHolder("darkmythos:lightstone")
-    public static ModTranslucentBlock lightStone;
+public class ModBlock extends Block {
+    public ModBlock(Material material) {
+        super(material);
+    }
 
     @SideOnly(Side.CLIENT)
-    public static void initModels() {
-        darkCrystalOre.initModel();
-        darkStone.initModel();
-        lightCrystalOre.initModel();
-        lightStone.initModel();
+    public void initModel() {
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
     }
 }

@@ -33,7 +33,7 @@ import net.minecraft.world.IBlockAccess;
 
 import java.util.Random;
 
-public class BlockDarkCrystalOre extends DarkBlock {
+public class BlockDarkCrystalOre extends ModBlock {
     public BlockDarkCrystalOre() {
         super(Material.ROCK);
         this.setCreativeTab(ModItems.tabDarkMythos);

@@ -26,7 +26,8 @@ package com.helion3.darkmythos.proxy;
 import com.helion3.darkmythos.*;
 import com.helion3.darkmythos.blocks.BlockDarkCrystalOre;
 import com.helion3.darkmythos.blocks.BlockLightCrystalOre;
-import com.helion3.darkmythos.blocks.DarkBlock;
+import com.helion3.darkmythos.blocks.ModBlock;
+import com.helion3.darkmythos.blocks.ModTranslucentBlock;
 import com.helion3.darkmythos.generation.BlockDarkCrystalOreGen;
 import com.helion3.darkmythos.generation.BlockDarkStoneGen;
 import com.helion3.darkmythos.generation.BlockLightCrystalOreGen;
@@ -66,14 +67,14 @@ public class CommonProxy {
         event.getRegistry().register(new BlockDarkCrystalOre());
         event.getRegistry().register(new BlockLightCrystalOre());
 
-        Block darkStone = new DarkBlock(Material.ROCK);
+        Block darkStone = new ModBlock(Material.ROCK);
         darkStone.setCreativeTab(ModItems.tabDarkMythos);
         darkStone.setHardness(2);
         darkStone.setRegistryName("darkstone");
         darkStone.setUnlocalizedName(DarkMythos.MODID + ".darkstone");
         event.getRegistry().register(darkStone);
 
-        Block lightStone = new DarkBlock(Material.ROCK);
+        Block lightStone = new ModTranslucentBlock(Material.ROCK);
         lightStone.setCreativeTab(ModItems.tabDarkMythos);
         lightStone.setHardness(1);
         lightStone.setLightLevel(0.2f);
