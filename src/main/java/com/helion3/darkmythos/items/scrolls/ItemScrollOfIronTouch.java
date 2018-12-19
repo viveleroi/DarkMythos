@@ -80,7 +80,8 @@ public class ItemScrollOfIronTouch extends Scroll {
             if (durabilityLeft >= 8) {
                 // Transmute block
                 worldIn.setBlockState(pos, Blocks.IRON_BLOCK.getDefaultState());
-            } else {
+            }
+            else if (!this.isPure(itemStack)) {
                 player.sendMessage(new TextComponentTranslation("text.scroll.backfire_poison"));
 
                 // Curse them

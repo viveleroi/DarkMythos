@@ -23,15 +23,26 @@
  ******************************************************************************/
 package com.helion3.darkmythos.items;
 
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.Item;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import com.helion3.darkmythos.ModBlocks;
+import net.minecraft.block.Block;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.init.Blocks;
 
-public class DarkItem extends Item {
-    @SideOnly(Side.CLIENT)
-    public void initModel() {
-        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
+public class ItemLightCrystal extends ModItem {
+    public ItemLightCrystal() {
+        super("lightcrystal");
+    }
+
+    @Override
+    public boolean onEntityItemUpdate(EntityItem entityItem) {
+        Block worldBlock = entityItem.world.getBlockState(entityItem.getPosition()).getBlock();
+
+        if (worldBlock == Blocks.WATER) {
+            entityItem.world.setBlockState(entityItem.getPosition(), ModBlocks.divineWater.getDefaultState());
+
+            entityItem.setDead();
+        }
+
+        return super.onEntityItemUpdate(entityItem);
     }
 }

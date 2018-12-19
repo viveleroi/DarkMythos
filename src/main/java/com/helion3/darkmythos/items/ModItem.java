@@ -25,11 +25,33 @@ package com.helion3.darkmythos.items;
 
 import com.helion3.darkmythos.DarkMythos;
 import com.helion3.darkmythos.ModItems;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemDarkCrystal extends DarkItem {
-    public ItemDarkCrystal(String name) {
+public class ModItem extends Item {
+    public ModItem(String name) {
+        super();
+
         this.setCreativeTab(ModItems.tabDarkMythos);
         this.setRegistryName(name);
         this.setUnlocalizedName(DarkMythos.MODID + "." + name);
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void initModel() {
+        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
+    }
+
+    protected NBTTagCompound getOrCreateNBTTagCompound(ItemStack itemStack) {
+        if (itemStack.hasTagCompound()) {
+            return itemStack.getTagCompound();
+        } else {
+            return new NBTTagCompound();
+        }
     }
 }

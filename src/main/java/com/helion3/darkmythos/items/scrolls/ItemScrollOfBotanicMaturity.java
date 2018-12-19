@@ -46,7 +46,7 @@ public class ItemScrollOfBotanicMaturity extends Scroll {
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         ItemStack itemStack = player.getHeldItem(hand);
 
-        if (this.tryForCurse(itemStack)) {
+        if (!worldIn.isRemote && this.tryForCurse(itemStack)) {
             // Inform them
             player.sendMessage(new TextComponentTranslation("text.scroll.cursed"));
 
@@ -55,7 +55,10 @@ public class ItemScrollOfBotanicMaturity extends Scroll {
 
             // Curse them
             Curses.applyMinorPoisonCurse(player);
+        }
 
+        // Client-side code needs to fail too
+        if (itemStack.getItemDamage() < 0) {
             return EnumActionResult.FAIL;
         }
 
@@ -63,20 +66,31 @@ public class ItemScrollOfBotanicMaturity extends Scroll {
         // things to the item damage we don't like
         ItemStack phantomBonemeal = itemStack.copy();
 
+        // Try to apply bonemeal effect
         if (ItemDye.applyBonemeal(phantomBonemeal, worldIn, pos, player, hand)) {
             itemStack.damageItem(1, player);
-        } else {
-            itemStack.damageItem(9, player);
 
-            // Run only on logical server
-            if (!worldIn.isRemote) {
-                player.sendMessage(new TextComponentTranslation("text.scroll.incorrect_poison"));
+            return EnumActionResult.SUCCESS;
+        } else {
+            if (this.isPure(itemStack)) {
+                // Run only on logical server
+                if (!worldIn.isRemote) {
+                    player.sendMessage(new TextComponentTranslation("text.scroll.incorrect"));
+                }
+            } else {
+                // Run only on logical server
+                if (!worldIn.isRemote) {
+                    player.sendMessage(new TextComponentTranslation("text.scroll.incorrect_poison"));
+                }
+
+                // Curse them
+                Curses.applyMinorPoisonCurse(player);
             }
 
-            // Curse them
-            Curses.applyMinorPoisonCurse(player);
-        }
+            // Destroy stack
+            itemStack.damageItem(9, player);
 
-        return EnumActionResult.SUCCESS;
+            return EnumActionResult.FAIL;
+        }
     }
 }

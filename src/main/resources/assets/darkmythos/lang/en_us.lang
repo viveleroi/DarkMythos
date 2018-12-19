@@ -19,6 +19,7 @@ item.darkmythos.superiordarkcrystalsword.name=Superior Dark Crystal Sword
 itemGroup.tabDarkMythos=DarkMythos
 text.scroll.backfire_poison=You tried to overuse the scroll. You've been poisoned for it
 text.scroll.cursed=Scroll was cursed!
+text.scroll.incorrect=You misused the scroll
 text.scroll.incorrect_poison=You misused the scroll. You've been poisoned for it
 tile.darkmythos.darkcrystalore.name=Dark Crystal Ore
 tile.darkmythos.darkstone.name=Dark Stone

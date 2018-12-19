@@ -24,10 +24,14 @@
 package com.helion3.darkmythos.items.scrolls;
 
 import com.helion3.darkmythos.DarkMythos;
+import com.helion3.darkmythos.ModBlocks;
 import com.helion3.darkmythos.ModItems;
-import com.helion3.darkmythos.items.DarkItem;
+import com.helion3.darkmythos.items.ModItem;
+import net.minecraft.block.Block;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.text.TextFormatting;
@@ -39,19 +43,16 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
-public abstract class Scroll extends DarkItem {
+public abstract class Scroll extends ModItem {
     protected double curseChance = 0.1;
 
     protected Random rng;
 
     public Scroll(String name) {
-        super();
+        super(name);
 
         this.rng = new Random();
-        this.setCreativeTab(ModItems.tabDarkMythos);
         this.setMaxStackSize(1);
-        this.setRegistryName(name);
-        this.setUnlocalizedName(DarkMythos.MODID + "." + name);
     }
 
     @Override
@@ -77,13 +78,29 @@ public abstract class Scroll extends DarkItem {
     }
 
     public boolean isPure(ItemStack itemStack) {
-        NBTTagCompound nbt;
-        if (itemStack.hasTagCompound()) {
-            nbt = itemStack.getTagCompound();
-        } else {
-            nbt = new NBTTagCompound();
-        }
+        NBTTagCompound nbt = getOrCreateNBTTagCompound(itemStack);
 
         return nbt.hasKey("IsPure") && nbt.getBoolean("IsPure");
+    }
+
+    @Override
+    public boolean onEntityItemUpdate(EntityItem entityItem) {
+        // Only check if not yet purified
+        if (!this.isPure(entityItem.getItem())) {
+            Block worldBlock = entityItem.world.getBlockState(entityItem.getPosition()).getBlock();
+
+            if (worldBlock == ModBlocks.divineWater) {
+                setPurified(entityItem.getItem(), true);
+            }
+        }
+
+        return super.onEntityItemUpdate(entityItem);
+    }
+
+    public void setPurified(ItemStack itemStack, boolean purified) {
+        NBTTagCompound nbt = getOrCreateNBTTagCompound(itemStack);
+        nbt.setBoolean("IsPure", purified);
+
+        itemStack.setTagCompound(nbt);
     }
 }

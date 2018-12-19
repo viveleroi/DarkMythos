@@ -85,7 +85,11 @@ Use legendary dark crystals and reinforced dark stone rods in the same patterns 
 
 ### Divine Water
 
-Not yet obtainable. Can be placed in-world with a bucket.
+Created by dropping a light crystal (will change) into a 1x1 block of water. Can be placed in-world with a bucket.
+
+## Scroll Purification
+
+Scrolls can be dropped into divine water to "purify" them. Pure scrolls have had any curses removed and may be used safely.
 
 ## Future
 
@@ -95,8 +99,7 @@ This mod is currently in development, with plans to add/finish:
 - Mythical Dark Crystals
 - Armor recipes for superior dark crystals
 - All legendary/mythical crystal variants of tools/armor pieces
-- Light stones/holy stones, "good" items
-- A scroll purification system/ritual
+- Light items
 
 ## Permissions
 

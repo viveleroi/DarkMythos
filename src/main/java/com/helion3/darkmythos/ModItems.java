@@ -28,7 +28,6 @@ import com.helion3.darkmythos.items.scrolls.ItemScrollOfBotanicMaturity;
 import com.helion3.darkmythos.items.scrolls.ItemScrollOfIronTouch;
 import com.helion3.darkmythos.items.scrolls.ItemScrollOfTransmootation;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -37,7 +36,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModItems {
     @GameRegistry.ObjectHolder("darkmythos:darkcrystal")
-    public static ItemDarkCrystal darkCrystal;
+    public static ModItem darkCrystal;
 
     @GameRegistry.ObjectHolder("darkmythos:darkcrystalore")
     public static ItemBlock darkCrystalOre;
@@ -46,22 +45,22 @@ public class ModItems {
     public static ItemBlock darkStone;
 
     @GameRegistry.ObjectHolder("darkmythos:darkstonerod")
-    public static DarkItem darkStoneRod;
+    public static ModItem darkStoneRod;
 
     @GameRegistry.ObjectHolder("darkmythos:reinforceddarkstonerod")
-    public static DarkItem reinforcedDarkStoneRod;
+    public static ModItem reinforcedDarkStoneRod;
 
     @GameRegistry.ObjectHolder("darkmythos:legendarydarkcrystal")
-    public static ItemDarkCrystal legendaryDarkCrystal;
+    public static ModItem legendaryDarkCrystal;
 
     @GameRegistry.ObjectHolder("darkmythos:lightcrystal")
-    public static DarkItem lightCrystal;
+    public static ItemLightCrystal lightCrystal;
 
     @GameRegistry.ObjectHolder("darkmythos:mythicaldarkcrystal")
-    public static ItemDarkCrystal mythicalDarkCrystal;
+    public static ModItem mythicalDarkCrystal;
 
     @GameRegistry.ObjectHolder("darkmythos:superiordarkcrystal")
-    public static ItemDarkCrystal superiorDarkCrystal;
+    public static ModItem superiorDarkCrystal;
 
     @GameRegistry.ObjectHolder("darkmythos:legendarydarkcrystalaxe")
     public static ItemDarkCrystalAxe legendaryDarkCrystalAxe;

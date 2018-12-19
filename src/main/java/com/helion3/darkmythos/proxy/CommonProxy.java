@@ -96,24 +96,15 @@ public class CommonProxy {
         event.getRegistry().register(new ItemBlock(ModBlocks.lightStone).setRegistryName(ModBlocks.lightStone.getRegistryName()));
 
         // Crystals
-        event.getRegistry().register(new ItemDarkCrystal("darkcrystal"));
-        event.getRegistry().register(new ItemDarkCrystal("legendarydarkcrystal"));
-        event.getRegistry().register(new ItemDarkCrystal("lightcrystal"));
-        event.getRegistry().register(new ItemDarkCrystal("mythicaldarkcrystal"));
-        event.getRegistry().register(new ItemDarkCrystal("superiordarkcrystal"));
+        event.getRegistry().register(new ItemLightCrystal());
+        event.getRegistry().register(new ModItem("darkcrystal"));
+        event.getRegistry().register(new ModItem("legendarydarkcrystal"));
+        event.getRegistry().register(new ModItem("mythicaldarkcrystal"));
+        event.getRegistry().register(new ModItem("superiordarkcrystal"));
 
         // Misc
-        Item darkStoneRod = new DarkItem();
-        darkStoneRod.setCreativeTab(ModItems.tabDarkMythos);
-        darkStoneRod.setRegistryName("darkstonerod");
-        darkStoneRod.setUnlocalizedName(DarkMythos.MODID + ".darkstonerod");
-        event.getRegistry().register(darkStoneRod);
-
-        Item reinforcedDarkStoneRod = new DarkItem();
-        reinforcedDarkStoneRod.setCreativeTab(ModItems.tabDarkMythos);
-        reinforcedDarkStoneRod.setRegistryName("reinforceddarkstonerod");
-        reinforcedDarkStoneRod.setUnlocalizedName(DarkMythos.MODID + ".reinforceddarkstonerod");
-        event.getRegistry().register(reinforcedDarkStoneRod);
+        event.getRegistry().register(new ModItem("darkstonerod"));
+        event.getRegistry().register(new ModItem("reinforceddarkstonerod"));
 
         // Scrolls
         event.getRegistry().register(new ItemScrollOfBotanicMaturity());
