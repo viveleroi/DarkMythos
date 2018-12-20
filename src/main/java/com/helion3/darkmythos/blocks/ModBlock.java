@@ -38,8 +38,8 @@ public class ModBlock extends Block {
         super(material);
 
         this.setCreativeTab(ModItems.tabDarkMythos);
-        this.setRegistryName("darkstone");
-        this.setUnlocalizedName(DarkMythos.MODID + ".darkstone");
+        this.setRegistryName(name);
+        this.setUnlocalizedName(DarkMythos.MODID + "." + name);
     }
 
     @SideOnly(Side.CLIENT)
