@@ -50,6 +50,9 @@ public class ModItems {
     @GameRegistry.ObjectHolder("darkmythos:darkstonerod")
     public static ModItem darkStoneRod;
 
+    @GameRegistry.ObjectHolder("darkmythos:divinestone")
+    public static ItemDivineStone divineStone;
+
     @GameRegistry.ObjectHolder("darkmythos:reinforceddarkstonerod")
     public static ModItem reinforcedDarkStoneRod;
 
@@ -57,7 +60,7 @@ public class ModItems {
     public static ModItem legendaryDarkCrystal;
 
     @GameRegistry.ObjectHolder("darkmythos:lightcrystal")
-    public static ItemLightCrystal lightCrystal;
+    public static ModItem lightCrystal;
 
     @GameRegistry.ObjectHolder("darkmythos:mythicaldarkcrystal")
     public static ModItem mythicalDarkCrystal;
@@ -126,6 +129,7 @@ public class ModItems {
 
         // Misc
         darkStoneRod.initModel();
+        divineStone.initModel();
         reinforcedDarkStoneRod.initModel();
 
         // Pickaxes

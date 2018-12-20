@@ -28,9 +28,9 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
 
-public class ItemLightCrystal extends ModItem {
-    public ItemLightCrystal() {
-        super("lightcrystal");
+public class ItemDivineStone extends ModItem {
+    public ItemDivineStone() {
+        super("divinestone");
     }
 
     @Override

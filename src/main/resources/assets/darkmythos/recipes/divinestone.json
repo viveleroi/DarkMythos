@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    "ACA",
+    "AAA"
+  ],
+  "key": {
+    "A": [{
+      "item": "darkmythos:lightcrystal",
+      "data": 0
+    }],
+    "B": [{
+      "item": "minecraft:feather",
+      "data": 0
+    }],
+    "C": [{
+      "item": "darkmythos:mythicaldarkcrystal",
+      "data": 0
+    }]
+  },
+  "result": {
+    "item": "darkmythos:divinestone",
+    "data": 0
+  }
+}

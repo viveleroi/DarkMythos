@@ -70,6 +70,10 @@ Two dark stone blocks, one above the other. Similar to planks used for sticks. M
 
 Made with one dark stone rod, a diamond, and an obsidian block in any shape.
 
+### Divine Stone
+
+Seven light crystals around a mythical dark crystal, with a feather in the top center.
+
 ## Tools
 
 Crystals currently can be used for tools:
@@ -93,7 +97,7 @@ Use legendary dark crystals and reinforced dark stone rods in the same patterns 
 
 ### Divine Water
 
-Created by dropping a light crystal (will change) into a 1x1 block of water. Can be placed in-world with a bucket.
+Created by dropping a divine stone (is consumed) into a 1x1 block of water.
 
 ## Scroll Purification
 
