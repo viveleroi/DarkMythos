@@ -36,7 +36,7 @@ import org.apache.logging.log4j.Logger;
 public class DarkMythos {
     public static final String MODID = "darkmythos";
     public static final String MODNAME = "DarkMythos";
-    public static final String MODVERSION= "0.0.1";
+    public static final String MODVERSION= "1.0.0";
 
     @SidedProxy(clientSide = "com.helion3.darkmythos.proxy.ClientProxy", serverSide = "com.helion3.darkmythos.proxy.ServerProxy")
     public static CommonProxy proxy;

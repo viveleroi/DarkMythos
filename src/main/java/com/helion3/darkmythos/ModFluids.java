@@ -34,9 +34,7 @@ public class ModFluids {
         new ResourceLocation(DarkMythos.MODID, "blocks/divinewaterflow")
     )
     .setMaterial(Material.WATER)
-    .setDensity(1100)
     .setGaseous(false)
     .setLuminosity(15)
-    .setViscosity(25000)
-    .setTemperature(300);
+    .setViscosity(500);
 }
