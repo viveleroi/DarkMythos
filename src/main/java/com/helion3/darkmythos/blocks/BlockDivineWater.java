@@ -36,6 +36,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockDivineWater extends BlockFluidClassic {
     public BlockDivineWater() {
         super(ModFluids.DIVINE_WATER, Material.WATER);
+
         this.setCreativeTab(ModItems.tabDarkMythos);
         this.setRegistryName("divinewater");
         this.setUnlocalizedName(DarkMythos.MODID + ".divinewater");

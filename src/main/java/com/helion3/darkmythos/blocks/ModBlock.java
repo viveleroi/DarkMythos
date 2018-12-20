@@ -23,6 +23,8 @@
  ******************************************************************************/
 package com.helion3.darkmythos.blocks;
 
+import com.helion3.darkmythos.DarkMythos;
+import com.helion3.darkmythos.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -32,8 +34,12 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModBlock extends Block {
-    public ModBlock(Material material) {
+    public ModBlock(String name, Material material) {
         super(material);
+
+        this.setCreativeTab(ModItems.tabDarkMythos);
+        this.setRegistryName("darkstone");
+        this.setUnlocalizedName(DarkMythos.MODID + ".darkstone");
     }
 
     @SideOnly(Side.CLIENT)

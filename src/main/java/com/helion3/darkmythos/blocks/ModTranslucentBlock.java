@@ -32,8 +32,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
 public class ModTranslucentBlock extends ModBlock {
-    public ModTranslucentBlock(Material material) {
-        super(material);
+    public ModTranslucentBlock(String name, Material material) {
+        super(name, material);
     }
 
     @Override

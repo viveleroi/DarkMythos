@@ -23,7 +23,6 @@
  ******************************************************************************/
 package com.helion3.darkmythos.blocks;
 
-import com.helion3.darkmythos.DarkMythos;
 import com.helion3.darkmythos.ModItems;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -35,13 +34,11 @@ import java.util.Random;
 
 public class BlockLightCrystalOre extends ModTranslucentBlock {
     public BlockLightCrystalOre() {
-        super(Material.ROCK);
-        this.setCreativeTab(ModItems.tabDarkMythos);
+        super("lightcrystalore", Material.ROCK);
+
         this.setHardness(3);
         this.setHarvestLevel("pickaxe", 3);
         this.setLightLevel(0.3f);
-        this.setRegistryName("lightcrystalore");
-        this.setUnlocalizedName(DarkMythos.MODID + ".lightcrystalore");
     }
 
     @Override

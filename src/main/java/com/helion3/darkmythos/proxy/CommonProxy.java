@@ -70,20 +70,14 @@ public class CommonProxy {
         event.getRegistry().register(new BlockDivineWater());
         event.getRegistry().register(new BlockLightCrystalOre());
 
-        Block darkStone = new ModBlock(Material.ROCK);
-        darkStone.setCreativeTab(ModItems.tabDarkMythos);
+        Block darkStone = new ModBlock("darkstone", Material.ROCK);
         darkStone.setHardness(2);
-        darkStone.setRegistryName("darkstone");
-        darkStone.setUnlocalizedName(DarkMythos.MODID + ".darkstone");
         event.getRegistry().register(darkStone);
 
-        Block lightStone = new ModTranslucentBlock(Material.ROCK);
-        lightStone.setCreativeTab(ModItems.tabDarkMythos);
+        Block lightStone = new ModTranslucentBlock("lightstone", Material.ROCK);
         lightStone.setHardness(1);
         lightStone.setLightLevel(0.2f);
-        lightStone.setRegistryName("lightstone");
         lightStone.setResistance(200);
-        lightStone.setUnlocalizedName(DarkMythos.MODID + ".lightstone");
         event.getRegistry().register(lightStone);
     }
 
