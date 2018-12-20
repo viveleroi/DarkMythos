@@ -42,6 +42,10 @@ Light Stone appears in the overworld between levels 100 and above. It emits a ve
 
 ## Items
 
+### Alpha Pearl
+
+Dropped by the ender dragon.
+
 ### Dark Crystals
 
 The base crystals dropped from Dark Crystal Ore.
@@ -53,6 +57,10 @@ Add 4 dark crystals around an emerald (top, right, bottom, left) to make a super
 ### Legendary Dark Crystals
 
 Add 4 superior dark crystals around a nether star (top, right, bottom, left) to make a legendary dark crystal.
+
+### Mythical Dark Crystals
+
+Use 8 legendary dark crystals surrounding an alpha pearl. Alpha pearl is not consumed.
 
 ### Dark Stone Rod
 
@@ -96,7 +104,6 @@ Scrolls can be dropped into divine water to "purify" them. Pure scrolls have had
 This mod is currently in development, with plans to add/finish:
 
 - Many more scrolls
-- Mythical Dark Crystals
 - Armor recipes for superior dark crystals
 - All legendary/mythical crystal variants of tools/armor pieces
 - Light items

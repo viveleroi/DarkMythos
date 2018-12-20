@@ -35,6 +35,9 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModItems {
+    @GameRegistry.ObjectHolder("darkmythos:alphapearl")
+    public static ModItem alphaPearl;
+
     @GameRegistry.ObjectHolder("darkmythos:darkcrystal")
     public static ModItem darkCrystal;
 
@@ -106,6 +109,9 @@ public class ModItems {
 
     @SideOnly(Side.CLIENT)
     public static void initModels() {
+        // Alpha pearl
+        alphaPearl.initModel();
+
         // Crystals
         darkCrystal.initModel();
         legendaryDarkCrystal.initModel();

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "key": {
+    "A": [{
+      "item": "darkmythos:legendarydarkcrystal",
+      "data": 0
+    }],
+    "B": [{
+      "item": "darkmythos:alphapearl",
+      "data": 0
+    }]
+  },
+  "result": {
+    "item": "darkmythos:mythicaldarkcrystal",
+    "data": 0
+  }
+}

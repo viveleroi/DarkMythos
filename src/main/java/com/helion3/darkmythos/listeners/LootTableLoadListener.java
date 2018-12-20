@@ -36,6 +36,9 @@ public class LootTableLoadListener {
         if (event.getName().getResourcePath().equals("entities/cow")) {
             LootUtil.addItemToTable(event.getTable(), ModItems.scrollOfTransmootation, 1, 1, 0.02f, "scroll");
         }
+        else if (event.getName().getResourcePath().equals("entities/ender_dragon")) {
+            LootUtil.addItemToTable(event.getTable(), ModItems.alphaPearl, 1, 1, 1, "alphapearl");
+        }
         else if (event.getName().getResourcePath().equals("entities/mooshroom")) {
             LootUtil.addItemToTable(event.getTable(), ModItems.scrollOfTransmootation, 1, 1, 0.1f, "scroll");
         }

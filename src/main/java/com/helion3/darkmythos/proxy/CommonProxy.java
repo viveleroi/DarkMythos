@@ -83,6 +83,11 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
+        // Alpha pearl
+        ModItem alphaPearl = new ModItem("alphapearl");
+        alphaPearl.setContainerItem(alphaPearl);
+        event.getRegistry().register(alphaPearl);
+
         // Blocks
         event.getRegistry().register(new ItemBlock(ModBlocks.darkCrystalOre).setRegistryName(ModBlocks.darkCrystalOre.getRegistryName()));
         event.getRegistry().register(new ItemBlock(ModBlocks.darkStone).setRegistryName(ModBlocks.darkStone.getRegistryName()));
