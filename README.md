@@ -2,7 +2,7 @@
 
 Maybe the ancient gods weren't myths after all?
 
-Resources, both dark and light, have been scattered among the overworld after a clash of the gods.
+Resources, both dark and light, have been scattered in the overworld after a clash of the gods.
 
 From dark and light crystals to magic scrolls, you have a chance to wield what gods did.
 
